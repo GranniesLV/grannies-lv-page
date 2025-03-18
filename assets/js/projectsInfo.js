@@ -1,0 +1,224 @@
+export const projects = {
+  current: [
+    {
+      id: "0",
+      title: "Erasmus+ KA1 projekts <i>Stabilitāte</i>",
+      date: "2024-06-01",
+      projectNumber: "2024-1-LV01-KA121-ADU-000204150",
+      timeframe: "01/06/2024 - 31/08/2025",
+      description: "",
+      gallery: [],
+    },
+  ],
+  realized: [
+    {
+      id: "1",
+      title: "Erasmus+ KA2 projekts <i>TETE</i>",
+      subtitle: "Teaching English to Elderly",
+      date: "2024-01-01",
+      projectNumber: "2023-2-LV01-KA210-ADU-000180419",
+      timeframe: "01/01/2024 - 31/08/2024",
+      description:
+        `<p>Kafija, tēja, saldumi un apņēmība mācīties angļu valodu.</p>\n < p > Pasniedzēja izjautā, kāda katram ir motivācija uzlabot angļu valodas zināšanas:</>\n < ul >\n < li > Patīk mācīties</ >\n < li > Radi dzīvo ārzemēs</ >\n < li > Vēlas būt sabiedrībā</ >\n < li > Interesantāk dzīvot</ >\n</ul >\n < p > Jauka pasniedzēja.</ >\n < p > Alfabēts, izrādās, ir aizmirsies(izruna).Rūpīgi šifrējam vārdus pa burtiem.Vairākas kursu dalībnieces pirmo reizi rakstīja uz baltās tāfeles.</ >\n < p > <span lang="en">"Do you speak English? Yes, but just a little bit…"</span> - ar jautras dziesmas vārdiem noskaidrojām, kā mūs katru sauc, no kurienes esam, kādas ir mūsu angļu valodas prasmes.</ >\n < p > Atkārtojām alfabētu, mācījāmies darbības vārdus vienkāršajā tagadnē.Un izruna, izruna, izruna...</ >\n < p > Interesanta pasniedzēja, pozitīva atmosfēra, mācīties griboši cilvēki.</ >\n < p > Pasniedzēja kā glezna.Kā mākslas darbs!</ >\n < p > Ļoti interesanta un radoša pieeja katram "skolniekam".</ >\n < p > 70 + gados nav viegli ne saprast, ne atcerēties, bet nodarbība ir tik interesanta, ka ir vēlēšanās mācīties, mācīties un arī iemācīties.</ >\n < p > Ļoti priecājos, ka esmu iesaistījusies šajā aizraujošajā mācību pasākumā!</ >\n < p > Paldies projekta izstrādātājiem un vecmāmiņām.lv.</ >\n < p > <strong>Vērtējums: 11 balles 10 baļļu sistēmā! 😊</strong></ > `,
+      carouselId: "galleryCarouselTETE",
+      carouselTextId: "carouselTextTETE",
+      defaultCarouselText:
+        "'Teaching English to Elderly' (<i>TETE</i>) nodarbība",
+      gallery: [
+        "TETE1.jpg",
+        "TETE2.jpg",
+        "TETE3.jpg",
+        "TETE4.jpg",
+        "TETE5.jpg",
+      ],
+    },
+    {
+      id: "2",
+      title: "Erasmus+ KA2 projekts <i>GoGetAward</i>",
+      subtitle:
+        "Darbojies, sasniedz mērķus, saņem atzinību: Kā veicināt senioru brīvprātīgo darbu",
+      date: "2020-07-01",
+      projectNumber: "2020-1-LT01-KA204-077966",
+      timeframe: "07/2020 - 02/2022",
+      description:
+        "<p>Projekta koordinatori bija <i>Kauņas Trešās Paaudzes Universitāte</i> (Lietuva), un tajā piedalījās partneri no 5 dalībvalstīm:</p><ul><li><strong>Latvija:</strong> <i>Vecmāmiņas.lv</i></li><li><strong>Lietuva:</strong> <i>Kauņas U3A</i></li><li><strong>Bulgārija:</strong> <i>Ruses Universitāte</i></li><li><strong>Nīderlande:</strong> <i>S.A.F.E.</i></li><li><strong>Slovēnija:</strong> <i>Trešās Paaudzes Universitāte U3A</i></li></ul><p><strong>Projekta mērķis:</strong> veicināt <strong>senioru brīvprātīgo darbu</strong> un pilsoniskās aktivitātes, balstoties uz <strong>Brīvprātīgo Senioru Motivācijas un Balvas Programmu</strong>. Tā palīdz senioriem attīstīties, piedalīties brīvprātīgajā darbā un sniegt ieguldījumu sabiedrībā.</p><p><strong>Galvenie sasniegumi:</strong></p><ul><li>Organizēti 5 projekta izplatīšanas pasākumi</li><li>Izveidoti 3 intelektuālie galaprodukti:</li><ul><li><strong>Mācību metožu rīks</strong> (IO1) – pieejams internetā</li><li><strong>Senioru Balvas programma</strong> (IO2) – sistēma brīvprātīgo uzskaitei un apbalvošanai</li><li><strong>Rokasgrāmata pieaugušo izglītotājiem</strong> (IO3) – metodiskais materiāls programmas ieviešanai</li></ul></ul><p>COVID-19 radīja izaicinājumus sanāksmju un pieredzes apmaiņas organizēšanā, tomēr, izmantojot pieejamās tehnoloģijas un ievērojot drošības pasākumus, mērķis tika sasniegts. Rezultātā izveidota <strong>Senioru Balvas programma</strong>, kas sistēmiski uzskaita brīvprātīgā darba stundas un piešķir apbalvojumus <strong>zelta, sudraba vai bronzas pakāpē</strong>.</p>",
+    },
+    {
+      id: "3",
+      title: "Erasmus+ KA1 projekts <i>Kā saglabāt motivāciju</i>",
+      date: "2021-11-01",
+      projectNumber: "2021-1-LV01-KA122-ADU-000018305",
+      timeframe: "1/11/2021 - 1/11/2022",
+      projectTarget:
+        "Dot iespēju pieaugušo izglītības treneriem gūt jaunas, inovatīvas kompetences darbam ar senioru auditoriju un dot stimulu dalībai turpmākajos Eiropas līmeņa projektos.",
+      description:
+        '<p>Projektā seši pasniedzēji no biedrības <i>Vecmāmiņas.lv</i> piedalījās mācību kursos trīs lokācijas vietās - Somijā, Grieķijā (Korfu) un Horvātijā.</p><div class="card mb-3"><div class="card-body"><h5 class="card-title">🇫🇮 Somija</h5><p class="card-text">Somijas kolēģi dalījās pieredzē, kā viņi organizē izglītības darbu un kā veido jaunas mācību apguves telpas, pielāgojoties esošajai situācijai un arī vēl nezināmiem izaicinājumiem. Noskaidrojām, kāds ir Somijas izglītības veiksmes stāsts – katra izglītojamā mācību vajadzību audits un sekošana izaugsmei!</p></div></div><div class="card mb-3"><div class="card-body"><h5 class="card-title">🇬🇷 Grieķija (Korfu)</h5><p class="card-text">Ļoti noderīgas ir Korfu iegūtās zināšanas par mākslas jomas sasaisti gan ar valodu apguvi, gan STEAM ietvaros, veidojot kvalitatīvas mācību programmas pieaugušajiem. Mūsu izglītotāji ir atgriezušies no apmācībām ar spēju palīdzēt audzēkņiem jau ar Eiropas mēroga skatījumu uz nākotnes attīstības procesiem.</p></div></div><div class="card mb-3"><div class="card-body"><h5 class="card-title">🇭🇷 Horvātija (Splita)</h5><p class="card-text">Savukārt Horvātijā, Splitā gūtās zināšanas palīdzēs pašiem pasniedzējiem neizdegt, mazināt stresu ikdienā un vadīt nodarbības mierīgā, līdzsvarotā manierē, kas jo īpaši svarīgs darbā ar senioru auditoriju.</p></div></div>',
+      carouselId: "galleryCarousel",
+      carouselTextId: "carouselText",
+      defaultCarouselText:
+        "Divas mūsu biedrības seniores arī saņēma Sertifikātus (2.rindā no labās puses)",
+      gallery: ["sertifikatuSanemsana.jpg"],
+    },
+    {
+      id: "4",
+      title: "Nordplus Adult projekts <i>Senioru motivācija mācīties</i>",
+      date: "2014-04-01",
+      timeframe: "01/04/2014 - 30/09/2015",
+      projectTarget:
+        "Stiprināt sadarbību starp Skandināvijas un Baltijas valstīm pieaugušo neformālās izglītības jomā, lai izpētītu, kas motivē seniorus turpināt mācīties.",
+      description:
+        "<p>Projekta ietvaros tika pētīti faktori, kas ietekmē senioru motivāciju, kā arī analizēti veidi, kā to iespējams veicināt. Iedziļinājāmies dažādos senioru izglītības modeļos, tostarp Trešās Paaudzes Universitātēs, kas ir plaši izplatītas Zviedrijā un Lietuvā, taču mazāk zināmas Latvijā un Igaunijā.</p><p>Apmeklējot Alytus Trešās Paaudzes Universitāti, guvām praktisku pieredzi un iedvesmu, kā veidot un organizēt senioru izglītības programmas. Šis apmeklējums kalpoja kā sākumpunkts idejai izveidot Trešās Paaudzes Universitāti arī Latvijā (Rīgā).</p><p>Papildus izpētījām, kas motivē seniorus mācīties un kā veicināt viņu aktīvu iesaisti sabiedrībā, lai uzturētu pozitīvu attieksmi pret mūžizglītību un līdzdalību dažādās aktivitātēs.</p>",
+    },
+    {
+      id: "5",
+      title: "Erasmus+ KA1 projekts <i>Trešā paaudze – otrā iespēja</i>",
+      subtitle: "",
+      date: "2014-08-01",
+      projectNumber: "2014-1LV01-KA104-0000502015.g.",
+      timeframe: "01/08/2014 - 30/07/2015",
+      projectTarget: "",
+      description:
+        "<p> Projektā biedrības pasniedzējiem tika dota iespēja piedalīties profesionālās pilnveides kursos par <strong>e-rīku izmantošanu mācību procesā</strong>. Apgūtās prasmes bija noderīgas ne tikai darbā un skolā, bet arī neformālajā pieaugušo izglītībā. </p> <p> Kursa laikā, sadarbojoties ar kolēģiem no <strong>Turcijas</strong> un <strong>Grieķijas</strong>, tika apgūta <strong>Moodle platformas</strong> izmantošana pedagoģiskā procesa nodrošināšanai. Papildus pasniedzēji iepazinās ar mājaslapu izveides iespējām <strong>Weebly.com</strong> platformā. </p> <p> Projekta ietvaros dalībniekiem tika dota iespēja arī praktiski izstrādāt <strong>mācību materiālus</strong> un veidot <strong>mājaslapas sagataves</strong>, pielietojot iegūtās zināšanas un digitālos rīkus. </p>",
+      carouselId: "",
+      carouselTextId: "",
+      defaultCarouselText: "",
+      gallery: [],
+    },
+    {
+      id: "6",
+      title: "Erasmus+ KA1 projekts <i>Virzāmies uz priekšu</i>",
+      subtitle: "",
+      date: "2017-09-01",
+      projectNumber: "2017-1-LV01-KA104-035223",
+      timeframe: "01/09/2017 - 31/08/2018",
+      projectTarget:
+        "Sniegt iespēju pieaugušo un senioru izglītotājiem gūt starptautisku pieredzi <strong>projektu vadībā</strong> un celt kvalifikāciju atbilstoši 21. gadsimta prasībām.",
+      description:
+        "<p> Biedrībai šī bija jau otrā iespēja paplašināt savu darbības lauku, iesaistoties <strong>starptautiskos projektos</strong>, lai iepazītu citu Eiropas valstu pieredzi <strong>senioru neformālajā izglītībā</strong>. </p> <p> Kursu organizatori bija pieredzējuši starptautiskajā jomā, tāpēc gūtās zināšanas bija vērtīgas gan turpinot <strong>izglītojošo darbu Latvijā</strong>, gan sadarbojoties ar partneriem no citām valstīm. </p> <p> <strong>Projekta ieguvumi:</strong> dalībniekiem tika celta <strong>pašapziņa</strong>, uzlabotas <strong>angļu valodas zināšanas</strong> un attīstītas <strong>starpkultūru komunikācijas prasmes</strong>. </p>",
+      carouselId: "",
+      carouselTextId: "",
+      defaultCarouselText: "",
+      gallery: [],
+    },
+    {
+      id: "7",
+      title: "RVP IKSD projekts <i>Ūdens rakstu radošās darbnīcas</i>",
+      subtitle: "",
+      date: "2022-06-15",
+      projectNumber: "2022-DIKS-22-756-lī",
+      timeframe: "15/06/2022 - 30/07/2022",
+      projectTarget:
+        "Saturīga brīvā laika pavadīšana skolēnu vasaras brīvdienās, divu paaudžu satikšanās un mijiedarbība. Radoši, mākslas un izglītojošie pasākumi, to izzināšana paaugstina bērnu dzīves kvalitāti, paplašina redzesloku, vairo dzīvesprieku, ceļ pašnovērtējumu, pasargā no kļūmīgiem lēmumiem, veido izpratni par vērtībām un rada piederības sajūtu sabiedrībai.",
+      description:
+        "<p> Katrā no aktivitāšu dienām atkārtojās ebru – gleznošana uz ūdens, kurai bija papildus pieskaņotas ar šo mākslu saistītas citas radošās darbnīcas – svilpavnieku veidošana un marmorizēšana, kā arī papīra marmorizēšanas un origami meistarklases. </p> <p> Noslēguma dienu - 20.07. Bērni devās pastaigā ar pedagogu sagatavotu karti rokās, pēc kuras bija jāmeklē un jāatrod tuvējā apkaimē dabā izvietoti mākslas priekšmeti: keramikas krāsotas pogas, apgleznoti akmentiņi, uz sētas uzpūsts graffiti un kokā iekarināts ebru tehnikas zīmējums. Pa ceļam, ejot pa Putnu ielu, dalībnieki minēja mīklas par putniem. Ceļa mērķis bija Valdo administratīvā ēka. Tur, 1. stāva vestibilā bija izvietota pirmajās trīs nodarbību dienās radīto darbu izstāde. </p> <p> Tā notika ar lentas pārgriešanu un mākslinieces uzrunu. Katrs jaunais mākslinieks – izstādes darbu autors, saņēma skaistu dāvanu no VALDO centra: VALDO 30 gadu jubilejas šokolādes kasti. </p>",
+      carouselId: "",
+      carouselTextId: "",
+      defaultCarouselText: "",
+      gallery: [],
+    },
+    {
+      id: "8",
+      title: "Erasmus+ KA1 projekts <i>Sajust un atbalstīt</i>",
+      subtitle: "",
+      date: "2018-11-24",
+      projectNumber: "2018-1-LV01-KA104-046764",
+      timeframe: "24/11/2018 - 12/07/2019",
+      projectTarget:
+        "Sniegt iespēju pieaugušo izglītotājiem piedalīties starptautiskos apmācību kursos, lai uzlabotu savas prasmes un iemaņas. Tā ir iespēja iegūt jaunas, inovatīvas kompetences darbam ar senioru auditoriju un dot stimulu dalībai turpmākajos Eiropas līmeņa projektos.",
+      description:
+        "<p>Projektā tika apgūtas un uzlabotas 21. gadsimta prasmes – <strong>koučings</strong> un <strong>multisensorās izglītības metodes</strong>. </p> <p> <strong>Cervantes Training</strong> organizētajos kursos tika gūtas zināšanas par mācību priekšlaicīgas pārtraukšanas iemesliem Eiropas valstīs. Dalībnieki ieguva praktiskas iemaņas darbā ar <strong>Emocionālās Brīvības Tehniku (EBT)</strong> (H. Kreigs, 1990), kā arī metodes, atziņas un ieteikumus, kā motivēt jauniešus mācīties un nepamest izglītību. </p> <p> Kursu ietvaros tika gūtas vairākas vērtīgas atziņas: <ul> <li>Mēs nevaram kontrolēt citus; </li> <li>Mums jāmācās, kā menedžēt mūsu atbildību un emocijas;</li> <li>Būt stipram un mierīgam – ne citu, bet savās acīs;</li> <li>Jāatzīst savas kļūdas un jāmācās – visu mūžu jāmācās, jo kā mēs varam mācīt citus, ja paši nemācīsimies?</li> </ul> </p> <p> Liela uzmanība tika pievērsta <strong>stresa menedžmentam</strong> – kā stress un emocijas ietekmē fizisko un mentālo veselību. Tika analizēts 'labais' stress un 'sliktais' – distress. </p> <p> Ārpus nodarbību laika bija iespēja aktualizēt savas zināšanas un pieredzi <strong>angļu un spāņu valodās</strong>, kā arī kultūras un subkultūras jautājumos. </p> <p> Kursa dalībnieki bija no <strong>Grieķijas, Rumānijas, Itālijas, Slovākijas, Lietuvas un Islandes</strong>, kas deva iespēju piedalīties interesantās tikšanās reizēs, diskusijās, kontaktu apmaiņā un kopīgos kultūras pasākumos, piemēram, <em>Flamenko vakarā</em>, ekskursijā uz Madridi un <em>Spāņu vakarā</em>. </p> <p><strong>Kursu tēmas:</strong> starpkultūru komunikācija, tolerance, daudzveidība.</p>",
+      carouselId: "",
+      carouselTextId: "",
+      defaultCarouselText: "",
+      gallery: [],
+    },
+    {
+      id: "9",
+      title: "Erasmus+ KA1 projekts <i>Drosme pieņemt izaicinājumus</i>",
+      subtitle: "",
+      date: "2019-09-01",
+      projectNumber: "2019-1LV01-KA104-060132",
+      timeframe: "01/09/2019 - 31/08/2020",
+      projectTarget: "",
+      description:
+        "<p> Erasmus+ KA1 projekta pieteikums, ko uzrakstījām, patiešām izrādījās liels izaicinājums, sākoties COVID-19 pandēmijai. </p> <p> Projekts sniedza iespēju biedrībai <i>Vecmāmiņas.lv</i> pieaugušo izglītotājiem piedalīties starptautiskos apmācību kursos, lai pilnveidotu savas prasmes un kompetences trīs galvenajās jomās: </p> <ul> <li>iekļaušana,</li> <li>mācīšanās ārpus telpām,</li> <li>inovācijas izglītībā.</li> </ul> <p> Projekta mērķis bija dot iespēju pieaugušo izglītības pasniedzējiem iegūt jaunas, inovatīvas kompetences darbā ar senioru auditoriju un sniegt viņiem stimulu piedalīties turpmākajos Eiropas projektos. </p> <p> Projekta ietvaros trīs biedrības <i><strong>Vecmāmiņas.lv</strong></i> izglītotāji devās uz apmācību kursiem: </p> <ul> <li><strong>Itālijā (Romā)</strong> – par pamatkompetencēm un to nozīmīgumu iekļaušanas procesā,</li> <li><strong>Horvātijā (Splitā)</strong> – par apmācībām ārpus telpām un kopīgu mācīšanos caur sadarbību,</li> <li><strong>Čehijā (Prāgā)</strong> – par inovatīvām pieejām mūsdienu izglītībā.</li> </ul> <p> Projekta rezultātā dalībnieki ir uzlabojuši savu pašapziņu, angļu valodas zināšanas, kā arī ieguvuši starpkultūru komunikācijas prasmes un kompetences. Ieguvēji ir ne tikai pedagogi, kas piedalījās mobilitātēs, bet arī viņu kolēģi, jo tika rīkota informatīva sapulce, kurā dalībnieki dalījās pieredzē un turpmāk varēs praktiski ieviest jauniegūtās metodes. </p> <p> <strong>Nordplus Adult projekts</strong> <i>Palīdzēsim kopā jūsu mīļajiem</i> – T4 (E-mācību platforma neformālajiem demences pacientu aprūpētājiem).</p>",
+      carouselId: "",
+      carouselTextId: "",
+      defaultCarouselText: "",
+      gallery: [],
+    },
+    {
+      id: "10",
+      title: "<i>Flexibli</i>",
+      subtitle: "",
+      date: "2022-09-01",
+      projectNumber: "2022-1-LV01-KA122-ADU000072986",
+      timeframe: "01/09/2022 - 31/08/2023",
+      projectTarget: "",
+      description:
+        "<p>Projekts biedrībai <i>Vecmāmiņas.lv</i> deva iespēju apgūt pieredzi citās Eiropas Savienības valstīs pie kvalitatīviem kursu sniedzējiem. Projekta ietvaros 6 pasniedzēji no biedrības <i>Vecmāmiņas.lv</i> piedalījās mācību kursos 3 lokācijas vietās - Islandē, Horvātijā un Portugālē. Mēs vēlējāmies dot iespēju mūsu biedrības pieaugušo izglītotājiem apmeklēt mācību kursus, lai gūtu jaunas idejas, apgūtu jaunas metodes un Eiropas mēroga zināšanas, ko tālāk nodot senioru auditorijai. Tā mēs uzlabojām zināšanas un metodiku valodu pasniegšanā, kā arī apguvām prasmes, kas nepieciešamas, lai parūpētos arī par savu labsajūtu. </p> <p>Uzzinājām, kā pieaugušo un senioru izglītība notiek citās Eiropas valstīs. Kā svarīgas jomas esam noteikuši starpkultūru komunikāciju, kā arī radošu pieeju valodu un kultūras apmācībā. Katram vēlamajam mērķim projekta ietvaros izdevās atrast piemērotus kursus.</p> <p>Mūsu izglītotāji ir atgriezušies no apmācībām ar spēju palīdzēt audzēkņiem jau ar Eiropas mēroga skatījumu uz nākotnes attīstības procesiem.</p> <p><strong>Islandē</strong> apguvām neparastu metodi senioru auditorijai – STPM metodi. Bet mācīties ar spēļu elementiem var jebkurā vecumā!</p> <p><strong>Horvātijā, Splitā</strong> gūtās zināšanas palīdzēs pašiem pasniedzējiem neizdegt, mazināt stresu ikdienā un vadīt nodarbības mierīgā, līdzsvarotā manierē, kas jo īpaši svarīgs darbā ar senioru auditoriju. </p> <p><strong>Portugālē</strong> pasniedzējas apguva gan kultūrizglītības elementus, gan valodas pasniegšanas metodes, kas piemērotas pieaugušo auditorijai.</p> <p>Ieguvēji ir ne tikai pedagogi, bet arī mūsu Senioru skoliņas nodarbību audzēkņi.</p>",
+      carouselId: "galleryCarouselFlexibli",
+      carouselTextId: "carouselTextFlexibli",
+      defaultCarouselText:
+        "Draudzības vakars Islandē bija iespaidīgs – kursu dalībnieki no 9 valstīm",
+      gallery: [
+        "flexibli1.jpg",
+        "flexibli2.jpg",
+        "flexibli3.jpg",
+        "flexibli4.jpg",
+      ],
+    },
+    {
+      id: "11",
+      title: "<i>Inovācija mūsu darbā</i>",
+      subtitle: "",
+      date: "2023-01-01",
+      projectNumber: "2023-1-LV01-KA122-ADU-000134256",
+      timeframe: " 01/01/2023 - ",
+      projectTarget:
+        "Apgūt Stāstu stāstīšanas metodiku kā valodu mācīšanas metodi, papildināt zināšanas ar inovatīvām 21. gadsimta mācīšanas un mācīšanās metodoloģijām valodu mācīšanas jomā. Apgūt vēstures un vietējās kultūras mācīšanas metodes.",
+      description:
+        "<p> Projekts sasniedza un pat pārsniedza plānotos rezultātus. 6 pasniedzēji apguva inovatīvas metodes kursos Spānijā, Grieķijā un Turcijā. Ieguvēji ir mūsu audzēkņi, kas ar aizrautību gaida jaunas metodes un interesantas nodarbības. Pasniedzēji apguva arī digitālās prasmes un uzlaboja angļu valodas zināšanas. Praktiskās zināšanas ir valodu metodika, nodarbības āra vidē un stāstīšanas metode papildināta ar vides tēmu. Mūsu organizācija ir ieguvusi inovatīvus risinājumus turpmākajam darbam. </p> <p> Mūs iedvesmoja PAIDEIA EXPERT TRAINING moto: “Prāts nav trauks, kas jāpiepilda, bet gan uguns, kas jāaizdedzina” (Plutarhs). </p> <p> Mācībās Turcijā piedalījās 2 dalībnieces. Apgūtās prasmes bija gan par stāstu stāstīšanu, gan vides programmu. </p> <p> Kursos Spānijā piedalījās 2 angļu valodas skolotājas, kas strādā ar mūsu senioriem. Viņām kursi par 21. gadsimta prasmēm bija ļoti noderīgi, jo tas papildināja valodas metodikas tēmu. </p> <p> 2 pasniedzējas piedalījās kursos Tesalonikos, Grieķijā. Tika apgūtas 2 galvenās metodes - Drāma un Edularp metode. Notika arī mācības ārā, parkā un dabas rezervātā. </p>",
+      carouselId: "",
+      carouselTextId: "",
+      defaultCarouselText: "",
+      gallery: [],
+    },
+    {
+      id: "12",
+      title: "<i>Starp savējiem</i>",
+      subtitle: "",
+      date: "2023-01-01",
+      projectNumber: "2023.LV/UKR_KO/2/03",
+      timeframe: "2023",
+      projectTarget:
+        "Ar dažādu aktivitāšu palīdzību iepazīstināt Ukrainas civiliedzīvotājus ar Valmieras pilsētas daudzveidību, sniegt māju sajūtu, iesaistīt tos kopējās aktivitātēs, sekmēt sadarbību un iejušanos pilsētā.",
+      description:
+        "<p>Starp savējiem – tā mēs vēlamies, lai justos ikviens Ukrainas iedzīvotājs, jo īpaši seniori, dzīvojot Valmieras novadā! 2023. gadā Valmieras novadā uzturējās aptuveni 250-300 Ukrainas civiliedzīvotāju, kas ir projekta primārā mērķauditorija kopā ar Valmieras pilsētas un novada iedzīvotājiem.</p><p>Projekta “Starp savējiem” aktivitātes norisinājās trīs mēnešus – oktobrī, novembrī, decembrī - dažādās Valmieras vietās.</p> <p>Ukrainas civiliedzīvotāji ieguva informāciju par Latvijas un Valmieras vēsturi, demokrātiju, par pašvaldības darbu un līdzdalības formām, kā arī par latviešu valodu un labākajām valodas apguves metodēm.</p> <p>Sporta dienā tika piedāvāts iepazīties ar Jāņparka apkaimi, kopā veicot sportiskas aktivitātes un orientējoties apkārtnē.</p> <p>Vides dienā projekta dalībnieki skatījās izrādi par atkritumu šķirošanu, noskaidroja, kā dzīvot un domāt zaļi, kā arī piedalījās radošajās darbnīcās.</p> <p>Radošuma dienā dalībnieki iemēģināja roku kaligrāfijā un rakstīja gan alfabētu, gan pastkartes.</p> <p>Kopīgais mācību brauciens uz Dzērbeni kā Demokrātijas mācību stunda. Noslēguma pasākums – Brīvprātīgo diena un iespēja arī pie mums nokļuvušajiem ukraiņiem nākotnē kļūt par brīvprātīgo kādā no nevalstiskajām organizācijām un iesaistīties sabiedrības līdzdalībā. Jo - esam taču visi STARP SAVĒJIEM!</p>",
+      carouselId: "galleryCarouselInovation",
+      carouselTextId: "carouselTextInovation",
+      defaultCarouselText: "Ziedojums Ukrainai",
+      gallery: [
+        "inovation1.jpg",
+        "inovation2.png",
+        "inovation3.png",
+        "inovation4.png",
+        "inovation5.png",
+      ],
+    },
+    {
+      id: "",
+      title: "<i></i>",
+      subtitle: "",
+      date: "",
+      projectNumber: "",
+      timeframe: "",
+      projectTarget: "",
+      description: "",
+      carouselId: "",
+      carouselTextId: "",
+      defaultCarouselText: "",
+      gallery: [],
+    },
+  ],
+};

@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vecmāmiņas.lv</title>
+  <link rel="icon" type="image/x-icon" href="../assets/images/icons/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/icons.ico/apple-icon-180x180.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/css/bootstrap.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div id="header"></div>
+
+  <main class="container">
+    <h1>Vēlos kļūt par <i>Vecmāmiņas.lv</i> biedru!</h1>
+    <h3 class="text-center">Aizpildiet pieteikuma formu</h1>
+
+    <!-- <form class="needs-validation" novalidate>
+      <div class="row g-3">
+
+        <div class="col-sm-6">
+          <label for="firstName" class="form-label">Vārds</label>
+          <input type="text" class="form-control" id="firstName" value="" required
+            pattern="^[A-Za-zāčēģīķļņōśūžĀČĒĢĪĶĻŅŌŚŪŽ]+$" minlength="3" data-ddg-inputtype="identities.firstName">
+          <div class="invalid-feedback">
+            Ir nepieciešams derīgs vārds.
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <label for="lastName" class="form-label">Uzvārds</label>
+          <input type="text" class="form-control" id="lastName" value="" required
+            pattern="^[A-Za-zāčēģīķļņōśūžĀČĒĢĪĶĻŅŌŚŪŽ]+$" minlength="3" data-ddg-inputtype="identities.lastName">
+          <div class="invalid-feedback">
+            Ir nepieciešams derīgs uzvārds.
+          </div>
+        </div>
+
+
+        <div class="col-sm-6">
+          <label for="email" class="form-label">E-pasts <span class="text-body-secondary">(Ieteicams)</span></label>
+          <input type="email" class="form-control" id="email" data-ddg-inputtype="identities.emailAddress"
+            data-ddg-autofill="true" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+            title="Lūdzu ievadiet derīgu e-pasta adresi (piemēram, vards@piemers.com)" required>
+          <div class="invalid-feedback">
+            Lūdzu ievadiet derīgu e-pasta adresi.
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <label for="phone" class="form-label">Telefons <span class="text-body-secondary">(Ieteicams)</span></label>
+          <input type="tel" class="form-control" id="phone" pattern="^\+?\d{8,12}$"
+            title="Telefona numuram jābūt sākot ar '+' un jābūt no 8 līdz 12 cipariem." required>
+          <div class="invalid-feedback">
+            Lūdzu ievadiet derīgu telefona nummuru.
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="terms" required>
+            <label class="form-check-label" for="terms">
+              Esmu iepazinies ar <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">datu apstrādes
+                noteikumiem</a>.
+            </label>
+            <div class="invalid-feedback">
+              Lai turpinātu, jums ir jāpiekrīt datu apstrādes noteikumiem.
+            </div>
+          </div>
+        </div>
+
+        
+
+
+      </div>
+      <br><br>
+
+      <button class="w-100 btn btn-primary btn-lg" type="submit">Iesniegt</button>
+    </form> -->
+
+    <form action="https://formspree.io/f/xldgyjnv" method="POST" class="needs-validation mt-5" novalidate>
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <label for="firstName" class="form-label">Vārds</label>
+          <input type="text" class="form-control" id="firstName" name="Vārds" required
+            pattern="^[A-Za-zāčēģīķļņōśūžĀČĒĢĪĶĻŅŌŚŪŽ]+$" minlength="3">
+          <div class="invalid-feedback">Ir nepieciešams derīgs vārds.</div>
+        </div>
+    
+        <div class="col-sm-6">
+          <label for="lastName" class="form-label">Uzvārds</label>
+          <input type="text" class="form-control" id="lastName" name="Uzvārds" required
+            pattern="^[A-Za-zāčēģīķļņōśūžĀČĒĢĪĶĻŅŌŚŪŽ]+$" minlength="3">
+          <div class="invalid-feedback">Ir nepieciešams derīgs uzvārds.</div>
+        </div>
+    
+        <div class="col-sm-6">
+          <label for="email" class="form-label">E-pasts</label>
+          <input type="email" class="form-control" id="email" name="E-pasts" required
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+          <div class="invalid-feedback">Lūdzu ievadiet derīgu e-pasta adresi.</div>
+        </div>
+    
+        <div class="col-sm-6">
+          <label for="phone" class="form-label">Telefons</label>
+          <input type="tel" class="form-control" id="phone" name="Telefons" required pattern="^\+?\d{8,12}$"
+            title="Telefona numuram jābūt no 8 līdz 12 cipariem.">
+          <div class="invalid-feedback">Lūdzu ievadiet derīgu telefona numuru.</div>
+        </div>
+    
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Apstiprināti" id="terms" name="Datu apstrādes noteikumi" required>
+            <label class="form-check-label" for="terms">
+              Esmu iepazinies ar <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">datu apstrādes
+                noteikumiem</a>.
+            </label>
+            <div class="invalid-feedback">Lai turpinātu, jāpiekrīt noteikumiem.</div>
+          </div>
+        </div>
+    
+        <button class="w-100 btn btn-primary btn-lg" type="submit">Iesniegt</button>
+      </div>
+    </form>
+
+    <!-- Modal for displaying the terms -->
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xxl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="termsModalLabel">Datu apstrādes noteikumi</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Šie datu apstrādes noteikumi nosaka, kā mēs apstrādājam jūsu personas datus, kad jūs izmantojat mūsu
+              pakalpojumus. <br>
+              Mēs cienām jūsu privātumu un apņemamies aizsargāt jūsu personas datus saskaņā ar piemērojamiem datu
+              aizsardzības likumiem, <br>
+              tostarp Eiropas Savienības Vispārējo datu aizsardzības regulu (GDPR). <br>
+              <br>
+              1. Personas datu vākšana<br>
+              Mēs vācam tikai tos personas datus, kas nepieciešami mūsu pakalpojumu sniegšanai, tostarp:<br>
+              <br>
+              Vārds un uzvārds<br>
+              E-pasta adrese<br>
+              Telefona numurs (ja nepieciešams)<br>
+              Cita informācija, ko jūs nododat brīvprātīgi.<br>
+              <br>
+              2. Personas datu izmantošana<br>
+              Jūsu personas dati tiek izmantoti šādiem mērķiem: <br>
+              <br>
+              Lai nodrošinātu jums piekļuvi mūsu pakalpojumiem.<br>
+              Lai sazinātos ar jums saistībā ar mūsu pakalpojumiem.<br>
+              Lai uzlabotu mūsu pakalpojumus un sniegtu personalizētu pieredzi.<br>
+              Lai izpildītu juridiskas saistības, piemēram, nodrošinātu rēķinu izsniegšanu.<br>
+              <br>
+              3. Datu saglabāšana<br>
+              Mēs saglabāsim jūsu personas datus tik ilgi, <br>cik tas būs nepieciešams mūsu pakalpojumu sniegšanai
+              vai
+              līdz brīdim, <br>kad
+              jūs pieprasīsiet to dzēšanu, saskaņā ar piemērojamajiem likumiem un noteikumiem.<br>
+              <br>
+              4. Datu nodošana trešajām pusēm<br>
+              Mēs neizpaudīsim jūsu personas datus trešajām pusēm, <br>izņemot gadījumus, kad tas ir nepieciešams
+              mūsu
+              pakalpojumu<br>
+              sniegšanai (piemēram, pakalpojumu sniedzējiem, <br>kas palīdz mums apstrādāt maksājumus), vai ja to
+              pieprasa likums.<br>
+              <br>
+              5. Jūsu tiesības<br>
+              Saskaņā ar piemērojamajiem datu aizsardzības likumiem jums ir tiesības:<br>
+              Pieprasīt piekļuvi saviem personas datiem.<br>
+              Pieprasīt savu personas datu labošanas vai dzēšanas.<br>
+              Iebilst pret savu datu apstrādi.<br>
+              Pieprasīt datu pārnesamību.<br>
+              Lai izmantotu savas tiesības, lūdzu, sazinieties ar mums,<br> izmantojot zemāk norādīto
+              kontaktinformāciju.<br>
+              <br>
+              6. Datu aizsardzība<br>
+              Mēs veicam nepieciešamos tehniskos un organizatoriskos pasākumus,<br> lai aizsargātu jūsu personas
+              datus
+              no nelikumīgas<br>
+              piekļuves, izpaušanas, iznīcināšanas vai bojājumiem.<br>
+              <br>
+              7. Izmaiņas šajos noteikumos<br>
+              Mēs paturam tiesības mainīt šos datu apstrādes noteikumus.<br> Ja tiek veiktas būtiskas izmaiņas,<br>
+              mēs
+              par tām informēsim
+              jūs,<br> publicējot atjauninātos noteikumus mūsu tīmekļa vietnē un,<br> ja nepieciešams, sazinoties ar
+              jums pa e-pastu.<br>
+              <br>
+              8. Sazinieties ar mums<br>
+              Ja jums ir kādi jautājumi par šiem datu apstrādes noteikumiem <br>vai vēlaties izmantot savas tiesības
+              attiecībā<br> uz jūsu
+              personas datiem, lūdzu, sazinieties ar mums:<br>
+              <br>
+              E-pasts: grannies@inbox.lv<br>
+              Tālrunis: +371 29789703<br>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aizvērt</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="module" src="../assets/js/main.js"></script>
+  <script type="module" src="../assets/js/formValidation.js"></script>
+</body>
+
+</html>

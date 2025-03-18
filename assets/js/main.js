@@ -1,3 +1,4 @@
+import {initFormValidation} from "./formValidation.js";
 import {scrollToTop, toggleScrollButton} from "./additionalFunc.js";
 
 // Funkcija, lai ielādētu komponentus (header un footer) un organizētu chat-pop-up ..
@@ -242,3 +243,66 @@ window.onload = function () {
 };
 
 window.addEventListener("scroll", toggleScrollButton);
+
+// Pārbauda vai anketa šajā lapā atrodas
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
+  if (form) {
+    form.addEventListener(
+      "submit",
+      function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault(); // Neļauj nosūtīt formu
+          event.stopPropagation();
+        } else {
+          event.preventDefault(); // Aptur noklusējuma formu
+
+          const formData = new FormData(form);
+          fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: {Accept: "application/json"},
+          })
+            .then((response) => {
+              if (response.ok) {
+                alert("Paldies! Jūsu anketa ir iesniegta.");
+                form.reset();
+                form.classList.remove("was-validated"); // Noņem validācijas statusu pēc iesniegšanas
+
+                // Pāradresācija uz konkrētu lapu
+                window.location.href =
+                  "https://vecmaminas.lv/pages/involved.html";
+              } else {
+                alert("Radās kļūda. Lūdzu, mēģiniet vēlreiz.");
+              }
+            })
+            .catch((error) => {
+              alert("Savienojuma kļūda. Mēģiniet vēlreiz.");
+            });
+        }
+
+        form.classList.add("was-validated"); // Pievieno Bootstrap validāciju
+      },
+      false
+    );
+  }
+});
+
+// Lasīt vairāk... pogas loģika, lai parādās un pazūd teksts
+document.addEventListener("DOMContentLoaded", function () {
+  let readMoreText = document.getElementById("readMoreText");
+
+  if (readMoreText) {
+    readMoreText.addEventListener("click", function () {
+      let moreText = document.getElementById("more");
+
+      if (moreText.style.display === "none") {
+        moreText.style.display = "inline";
+        readMoreText.textContent = "Lasīt mazāk";
+      } else {
+        moreText.style.display = "none";
+        readMoreText.textContent = "Lasīt vairāk...";
+      }
+    });
+  }
+});
