@@ -60,15 +60,12 @@ async function loadComponent(id, file) {
   }
 }
 
-
-
 // Funkcija, kas apstrādā SVG pēc ielādes
 function handleSvgIcons() {
   const svgs = document.querySelectorAll(".icon svg");
   const a = document.querySelectorAll(".additional-icons a");
   console.log("Atrasto SVG skaits:", svgs.length);
   console.log("Atrasto A tag skaits:", a.length);
-  
 
   svgs.forEach((svg) => {
     svg.addEventListener("click", () => {
@@ -207,7 +204,6 @@ function setActiveNavLink() {
   });
 }
 
-
 // Izsaucam sākotnēji, kad lapa ielādējas
 document.addEventListener("DOMContentLoaded", async function () {
   // Ielādējam header, footer komponentes
@@ -306,3 +302,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// Atver modālo logu pēc lapas ielādes
+window.onload = function () {
+  var myModal = new bootstrap.Modal(document.getElementById("facebookModal"));
+  myModal.show();
+};
