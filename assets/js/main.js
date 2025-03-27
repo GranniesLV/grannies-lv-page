@@ -305,6 +305,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Atver modālo logu pēc lapas ielādes
 window.onload = function () {
-  var myModal = new bootstrap.Modal(document.getElementById("facebookModal"));
-  myModal.show();
+  // Pārbauda, vai pašreizējais URL atbilst mājas lapai
+  if (
+    window.location.pathname === "/" ||
+    window.location.pathname === "/index.html"
+  ) {
+    var myModal = new bootstrap.Modal(document.getElementById("facebookModal"));
+    myModal.show();
+  }
 };

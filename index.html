@@ -34,20 +34,39 @@
 
   </main>
 
-  <!-- Modālais logs -->
+  <!-- Modālais logs "Jaunie raksti" ar scroll funkciju -->
   <div class="modal fade" id="facebookModal" tabindex="-1" aria-labelledby="facebookModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="facebookModalLabel">Jaunākie raksti</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <iframe
-            src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid027LokLoJYx5WCGQmxQj5CkQkQ2auz1cuX6on7b5N9A8McmMdyrXANDQg23b62gha2l%26id%3D61574240234795&show_text=true&width=500"
-            width="100%" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
-            allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-          </iframe>
+          <div class="d-flex flex-column align-items-center gap-3">
+
+            <h4>2024.gada pārskats</h4>
+            <a href="./pages/topicality.html#annualMeeting2024">
+              <img src="./assets/images/titles/2024GadaParskats.png" class="img-fluid rounded" alt="Raksta attēls">
+            </a>
+
+            <h4>Jaunākasi Ieraksts Facebook</h4>
+            <iframe
+              src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid027LokLoJYx5WCGQmxQj5CkQkQ2auz1cuX6on7b5N9A8McmMdyrXANDQg23b62gha2l%26id%3D61574240234795&show_text=true&width=500"
+              width="100%" height="350" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+              allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+            </iframe>
+
+            <h4>Mūsu kalendārs</h4>
+            <h6 style="margin-top: -20px !important;">Marts: Jaunais Vārdu Krājums</h6>
+            <a href="./assets/documents/kalendars.pdf" target="_blank">
+              <img src="./assets/images/titles/calendarMarch2025.png" class="img-fluid rounded" alt="Raksta Kalendārs attēls">
+            </a>
+  
+            <!-- <a href="#">
+              <img src="./assets/images/titles/2024GadaParskats.png" class="img-fluid rounded" alt="Cits raksts">
+            </a> -->
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aizvērt</button>
@@ -55,6 +74,8 @@
       </div>
     </div>
   </div>
+
+
 
   <!-- FOOTER -->
   <div id="footer"></div>
