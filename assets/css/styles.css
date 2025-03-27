@@ -211,6 +211,18 @@ h1 {
   font-size: 1.5rem;
 }
 
+/* BulletPoint visual */
+.custom-list {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.custom-list li::before {
+  content: "✔️";
+  font-size: 20px;
+  margin-right: 10px;
+}
+
 /* Author */
 .made-by #pro, .made-by #proA {
   font-size: 18px;
