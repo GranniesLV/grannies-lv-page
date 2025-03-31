@@ -83,9 +83,8 @@ h1 {
   fill: rgb(247, 137, 83);
 }
 
-/*~ CHAT POP UP */
-
-#chat-pop-up {
+/*~ CONTACT POP UP */
+#contact-pop-up {
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -105,7 +104,7 @@ h1 {
 }
 
 /* sākotnējais izmērs */
-#chat-pop-up.hidden {
+#contact-pop-up.hidden {
   width: 60px;
   height: 60px;
   padding-top: 13px;
@@ -113,9 +112,8 @@ h1 {
 }
 
 /* Pāreja līdz 350px augstumā un pēc tam 200px platumā */
-#chat-pop-up.active {
+#contact-pop-up.active {
   animation: popUpAnimation 3s ease-out;
-  transition: all 1s ease-out;
 }
 
 @keyframes popUpAnimation {
@@ -142,7 +140,7 @@ h1 {
 }
 
 /* Parādīt citas ikonas tikai pēc animācijas beigām */
-#chat-pop-up.active .additional-icons {
+#contact-pop-up.active .additional-icons {
   display: block;
   animation: iconAppear 1s ease-out 1.5s backwards;
 }
@@ -156,18 +154,18 @@ h1 {
   }
 }
 
-#chat-pop-up .icon {
+#contact-pop-up .icon {
   cursor: pointer;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   display: block;
   transition: transform 0.3s ease;
 }
 
-#chat-pop-up .icon:hover {
+#contact-pop-up .icon:hover {
   transform: scale(1.1);
 }
 
-#chat-pop-up .additional-icons {
+#contact-pop-up .additional-icons {
   display: none;
 }
 
@@ -178,6 +176,34 @@ h1 {
 
 .icon-container h3 {
   margin-left: 10px;
+}
+
+/* "X" pogai sākotnēji iestatām neredzamību */
+#contact-pop-up .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: black;
+  background: transparent;
+  border: none;
+  padding: 0;
+  opacity: 0; /* Paslēpt sākumā */
+  visibility: hidden; /* Sākumā "X" ir neredzams */
+  transition: opacity 0.5s ease, visibility 0s 2.5s; /* Aizkavēsim redzamību līdz logam atveras */
+}
+
+/* Kad logs ir atvērts, "X" parādās */
+#contact-pop-up.active .close-btn {
+  opacity: 1;
+  visibility: visible; /* Pārslēgsim redzamību tikai pēc atvēršanas */
+  transition: opacity 0.5s ease, visibility 0s 0s; /* Atcelsim aizkavēšanu */
+}
+
+/* Nodrošina, ka "X" tiek parādīts kopā ar citām ikonām */
+#contact-pop-up.active .close-btn::before {
+  content: "✖️";
 }
 
 
