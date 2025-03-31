@@ -237,7 +237,7 @@ h1 {
   font-size: 1.5rem;
 }
 
-/* BulletPoint visual */
+/*! BulletPoint VISUAL */
 .custom-list {
   list-style-type: none;
   padding-left: 20px;
@@ -249,7 +249,25 @@ h1 {
   margin-right: 10px;
 }
 
-/* Author */
+/*! RECOMMEND SECTION */
+
+/* Pielāgo attēlu lielumu, izmantojot media queries */
+@media (max-width: 768px) {
+  .clearfix .card-img-top {
+    width: 100%; /* Attēls aizņem visu pieejamo platumu mobilajā versijā */
+    height: auto; /* Saglabā attiecību, lai attēls nebūtu izstiepts */
+  }
+}
+
+@media (min-width: 769px) {
+  .clearfix .card-img-top {
+    width: 25%; /* Piemēram, uz lieliem ekrāniem attēls būs 70% no platuma */
+    height: auto; /* Saglabā attiecību */
+    margin: 0 auto; /* Centrs attēlu */
+  }
+}
+
+/** Author */
 .made-by #pro, .made-by #proA {
   font-size: 18px;
 }
