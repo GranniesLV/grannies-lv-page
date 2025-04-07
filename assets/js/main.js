@@ -304,7 +304,7 @@ window.onload = function () {
     window.location.pathname === "/" ||
     window.location.pathname === "/index.html"
   ) {
-    var myModal = new bootstrap.Modal(document.getElementById("facebookModal"));
+    let myModal = new bootstrap.Modal(document.getElementById("newsPopUpModal"));
     myModal.show();
   }
 };
