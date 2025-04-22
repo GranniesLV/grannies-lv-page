@@ -280,19 +280,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Lasīt vairāk... pogas loģika ar klasi
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".readMoreText").forEach((button) => {
-    button.addEventListener("click", () => {
-      const moreText = button.closest(".card").querySelector(".more");
-      if (moreText) {
-        moreText.style.display =
-          moreText.style.display === "none" ? "block" : "none";
-        button.textContent =
-          moreText.style.display === "none" ? "Lasīt tālāk..." : "Rādīt mazāk";
+document.addEventListener("DOMContentLoaded", function () {
+  const readMoreButtons = document.querySelectorAll(".readMoreText");
+
+  readMoreButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const moreSection = this.closest(".clearfix").querySelector(".more");
+      if (moreSection) {
+        const isVisible = moreSection.style.display === "block";
+        moreSection.style.display = isVisible ? "none" : "block";
+        this.textContent = isVisible ? "Lasīt tālāk..." : "Rādīt mazāk";
       }
     });
   });
 });
+
 
 // Modālā loga atvēršana pēc lapas ielādes
 window.onload = function () {
