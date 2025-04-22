@@ -279,23 +279,19 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Lasīt vairāk... pogas loģika
-document.addEventListener("DOMContentLoaded", function () {
-  let readMoreText = document.getElementById("readMoreText");
-
-  if (readMoreText) {
-    readMoreText.addEventListener("click", function () {
-      let moreText = document.getElementById("more");
-
-      if (moreText.style.display === "none") {
-        moreText.style.display = "inline";
-        readMoreText.textContent = "Lasīt mazāk";
-      } else {
-        moreText.style.display = "none";
-        readMoreText.textContent = "Lasīt vairāk...";
+// Lasīt vairāk... pogas loģika ar klasi
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".readMoreText").forEach((button) => {
+    button.addEventListener("click", () => {
+      const moreText = button.closest(".card").querySelector(".more");
+      if (moreText) {
+        moreText.style.display =
+          moreText.style.display === "none" ? "block" : "none";
+        button.textContent =
+          moreText.style.display === "none" ? "Lasīt tālāk..." : "Rādīt mazāk";
       }
     });
-  }
+  });
 });
 
 // Modālā loga atvēršana pēc lapas ielādes
@@ -304,7 +300,9 @@ window.onload = function () {
     window.location.pathname === "/" ||
     window.location.pathname === "/index.html"
   ) {
-    let myModal = new bootstrap.Modal(document.getElementById("newsPopUpModal"));
+    let myModal = new bootstrap.Modal(
+      document.getElementById("newsPopUpModal")
+    );
     myModal.show();
   }
 };
