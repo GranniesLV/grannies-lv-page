@@ -308,3 +308,63 @@ window.onload = function () {
     myModal.show();
   }
 };
+
+// Kalendārs jaunumu sadaļā
+// Definē mēnešus un datus
+const calendarData = {
+  4: {
+    name: "April",
+    page: 9,
+    image: "april.png",
+    description: "Jaunais Vārdu Krājums",
+  },
+  5: {
+    name: "May",
+    page: 10,
+    image: "may.png",
+    description: "Jaunais Vārdu Krājums",
+  },
+  6: {
+    name: "June",
+    page: 11,
+    image: "june.png",
+    description: "Jaunais Vārdu Krājums",
+  },
+  7: {
+    name: "July",
+    page: 12,
+    image: "july.png",
+    description: "Jaunais Vārdu Krājums",
+  },
+  8: {
+    name: "August",
+    page: 13,
+    image: "august.png",
+    description: "Jaunais Vārdu Krājums",
+  },
+};
+
+// Atrodi elementus
+const descriptionEl = document.getElementById('calendar-description');
+const imageEl = document.getElementById('calendar-image');
+const linkEl = document.getElementById('calendar-link');
+const buttonEl = document.getElementById('calendar-button');
+
+// Iegūsti šī brīža mēnesi
+const currentMonth = new Date().getMonth() + 1; // getMonth() dod 0-11, tāpēc +1
+
+if (calendarData[currentMonth]) {
+  const data = calendarData[currentMonth];
+  descriptionEl.innerHTML = `<b>${data.name}</b>: ${data.description}`;
+  imageEl.src = `./assets/images/calendar/${data.image}`;
+  linkEl.href = `./assets/documents/kalendars.pdf#page=${data.page}`;
+  buttonEl.href = `./assets/documents/kalendars.pdf#page=${data.page}`;
+} else {
+  // Ja ārpus definētajiem mēnešiem, piemēram, rudenī vai ziemā
+  descriptionEl.innerHTML = 'Kalendārs nav pieejams šim mēnesim.';
+  imageEl.src = './assets/images/calendar/defaultCalendar.png';
+  linkEl.href = '#';
+  buttonEl.href = '#';
+  buttonEl.classList.add('disabled');
+}
+
