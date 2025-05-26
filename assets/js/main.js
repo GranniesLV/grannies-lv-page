@@ -313,31 +313,31 @@ window.onload = function () {
 // Definē mēnešus un datus
 const calendarData = {
   4: {
-    name: "April",
+    name: "Aprīlis",
     page: 9,
     image: "april.png",
     description: "Jaunais Vārdu Krājums",
   },
   5: {
-    name: "May",
+    name: "Maijs",
     page: 10,
     image: "may.png",
     description: "Jaunais Vārdu Krājums",
   },
   6: {
-    name: "June",
+    name: "Jūnijs",
     page: 11,
     image: "june.png",
     description: "Jaunais Vārdu Krājums",
   },
   7: {
-    name: "July",
+    name: "Jūlijs",
     page: 12,
     image: "july.png",
     description: "Jaunais Vārdu Krājums",
   },
   8: {
-    name: "August",
+    name: "Augusts",
     page: 13,
     image: "august.png",
     description: "Jaunais Vārdu Krājums",
