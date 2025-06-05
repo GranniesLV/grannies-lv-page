@@ -1238,7 +1238,10 @@ progress {
   }
   .col-md-4 {
     flex: 0 0 auto;
-    /* width: 33.33333333%; */
+    width: 33.33333333%;
+  }
+  .col-md-4-footer {
+    flex: 0 0 auto;
   }
   .col-md-5 {
     flex: 0 0 auto;
