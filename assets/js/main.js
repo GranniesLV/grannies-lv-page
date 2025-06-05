@@ -295,7 +295,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 // Modālā loga atvēršana pēc lapas ielādes
 window.onload = function () {
   if (
@@ -309,8 +308,26 @@ window.onload = function () {
   }
 };
 
+// Funkcija, kas aprēķina ceļa prefiksu atkarībā no direktoriju dziļuma
+function getRelativePathPrefix() {
+  // Noņem pēdējo segmentu, ja tas ir fails (piemēram, index.html)
+  const pathParts = window.location.pathname.split("/");
+  if (pathParts[pathParts.length - 1].includes(".")) {
+    pathParts.pop(); // Noņem faila nosaukumu
+  }
+
+  const depth = pathParts.filter((part) => part).length;
+
+  // Ja dziļums 0 → index.html saknē → "./"
+  if (depth === 0) {
+    return "./";
+  }
+
+  // Pretējā gadījumā ģenerē ../ atkarībā no dziļuma
+  return "../".repeat(depth);
+}
+
 // Kalendārs jaunumu sadaļā
-// Definē mēnešus un datus
 const calendarData = {
   4: {
     name: "Aprīlis",
@@ -345,26 +362,27 @@ const calendarData = {
 };
 
 // Atrodi elementus
-const descriptionEl = document.getElementById('calendar-description');
-const imageEl = document.getElementById('calendar-image');
-const linkEl = document.getElementById('calendar-link');
-const buttonEl = document.getElementById('calendar-button');
+const descriptionEl = document.getElementById("calendar-description");
+const imageEl = document.getElementById("calendar-image");
+const linkEl = document.getElementById("calendar-link");
+const buttonEl = document.getElementById("calendar-button");
+
+// Ceļa prefikss
+const prefix = getRelativePathPrefix();
 
 // Iegūsti šī brīža mēnesi
-const currentMonth = new Date().getMonth() + 1; // getMonth() dod 0-11, tāpēc +1
+const currentMonth = new Date().getMonth() + 1;
 
 if (calendarData[currentMonth]) {
   const data = calendarData[currentMonth];
   descriptionEl.innerHTML = `<b>${data.name}</b>: ${data.description}`;
-  imageEl.src = `./assets/images/calendar/${data.image}`;
-  linkEl.href = `./assets/documents/kalendars.pdf#page=${data.page}`;
-  buttonEl.href = `./assets/documents/kalendars.pdf#page=${data.page}`;
+  imageEl.src = `${prefix}assets/images/calendar/${data.image}`;
+  linkEl.href = `${prefix}assets/documents/kalendars.pdf#page=${data.page}`;
+  buttonEl.href = `${prefix}assets/documents/kalendars.pdf#page=${data.page}`;
 } else {
-  // Ja ārpus definētajiem mēnešiem, piemēram, rudenī vai ziemā
-  descriptionEl.innerHTML = 'Kalendārs nav pieejams šim mēnesim.';
-  imageEl.src = './assets/images/calendar/defaultCalendar.png';
-  linkEl.href = '#';
-  buttonEl.href = '#';
-  buttonEl.classList.add('disabled');
+  descriptionEl.innerHTML = "Kalendārs nav pieejams šim mēnesim.";
+  imageEl.src = `${prefix}assets/images/calendar/defaultCalendar.png`;
+  linkEl.href = "#";
+  buttonEl.href = "#";
+  buttonEl.classList.add("disabled");
 }
-
