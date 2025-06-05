@@ -1240,9 +1240,16 @@ progress {
     flex: 0 0 auto;
     width: 33.33333333%;
   }
+  
+  /*! pielāgotie */
   .col-md-4-footer {
     flex: 0 0 auto;
   }
+  .col-md-4-rec {
+    flex: 0 0 auto;
+  }
+  /*!  */
+
   .col-md-5 {
     flex: 0 0 auto;
     width: 41.66666667%;
