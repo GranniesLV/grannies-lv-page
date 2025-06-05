@@ -376,12 +376,12 @@ const currentMonth = new Date().getMonth() + 1;
 if (calendarData[currentMonth]) {
   const data = calendarData[currentMonth];
   descriptionEl.innerHTML = `<b>${data.name}</b>: ${data.description}`;
-  imageEl.src = `${prefix}assets/images/calendar/${data.image}`;
-  linkEl.href = `${prefix}assets/documents/kalendars.pdf#page=${data.page}`;
-  buttonEl.href = `${prefix}assets/documents/kalendars.pdf#page=${data.page}`;
+  imageEl.src = `/assets/images/calendar/${data.image}`;
+  linkEl.href = `/assets/documents/kalendars.pdf#page=${data.page}`;
+  buttonEl.href = `/assets/documents/kalendars.pdf#page=${data.page}`;
 } else {
   descriptionEl.innerHTML = "Kalendārs nav pieejams šim mēnesim.";
-  imageEl.src = `${prefix}assets/images/calendar/defaultCalendar.png`;
+  imageEl.src = `/assets/images/calendar/defaultCalendar.png`;
   linkEl.href = "#";
   buttonEl.href = "#";
   buttonEl.classList.add("disabled");
