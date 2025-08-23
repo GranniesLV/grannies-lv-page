@@ -1,5 +1,5 @@
 import {initFormValidation} from "./formValidation.js";
-import {scrollToTop, toggleScrollButton} from "./additionalFunc.js";
+import { scrollToTop, toggleScrollButton } from "./additionalFunc.js";
 
 // Funkcija komponentu ielādei
 async function loadComponent(id, file) {
@@ -307,82 +307,3 @@ window.onload = function () {
     myModal.show();
   }
 };
-
-// Funkcija, kas aprēķina ceļa prefiksu atkarībā no direktoriju dziļuma
-function getRelativePathPrefix() {
-  // Noņem pēdējo segmentu, ja tas ir fails (piemēram, index.html)
-  const pathParts = window.location.pathname.split("/");
-  if (pathParts[pathParts.length - 1].includes(".")) {
-    pathParts.pop(); // Noņem faila nosaukumu
-  }
-
-  const depth = pathParts.filter((part) => part).length;
-
-  // Ja dziļums 0 → index.html saknē → "./"
-  if (depth === 0) {
-    return "./";
-  }
-
-  // Pretējā gadījumā ģenerē ../ atkarībā no dziļuma
-  return "../".repeat(depth);
-}
-
-// Kalendārs jaunumu sadaļā
-const calendarData = {
-  4: {
-    name: "Aprīlis",
-    page: 9,
-    image: "april.png",
-    description: "Jaunais Vārdu Krājums",
-  },
-  5: {
-    name: "Maijs",
-    page: 10,
-    image: "may.png",
-    description: "Jaunais Vārdu Krājums",
-  },
-  6: {
-    name: "Jūnijs",
-    page: 11,
-    image: "june.png",
-    description: "Jaunais Vārdu Krājums",
-  },
-  7: {
-    name: "Jūlijs",
-    page: 12,
-    image: "july.png",
-    description: "Jaunais Vārdu Krājums",
-  },
-  8: {
-    name: "Augusts",
-    page: 13,
-    image: "august.png",
-    description: "Jaunais Vārdu Krājums",
-  },
-};
-
-// Atrodi elementus
-const descriptionEl = document.getElementById("calendar-description");
-const imageEl = document.getElementById("calendar-image");
-const linkEl = document.getElementById("calendar-link");
-const buttonEl = document.getElementById("calendar-button");
-
-// Ceļa prefikss
-const prefix = getRelativePathPrefix();
-
-// Iegūsti šī brīža mēnesi
-const currentMonth = new Date().getMonth() + 1;
-
-if (calendarData[currentMonth]) {
-  const data = calendarData[currentMonth];
-  descriptionEl.innerHTML = `<b>${data.name}</b>: ${data.description}`;
-  imageEl.src = `/assets/images/calendar/${data.image}`;
-  linkEl.href = `/assets/documents/kalendars.pdf#page=${data.page}`;
-  buttonEl.href = `/assets/documents/kalendars.pdf#page=${data.page}`;
-} else {
-  descriptionEl.innerHTML = "Kalendārs nav pieejams šim mēnesim.";
-  imageEl.src = `/assets/images/calendar/defaultCalendar.png`;
-  linkEl.href = "#";
-  buttonEl.href = "#";
-  buttonEl.classList.add("disabled");
-}
