@@ -267,7 +267,7 @@ h1 {
   }
 }
 
-/*! NEWS SEcTION scrollable */
+/*! NEWS SECTION scrollable */
 
 .scrollable-column {
   height: 150vh;
@@ -400,3 +400,13 @@ h1 {
   color: #606770;
 }
 
+/*~ MODAL WINDOW SECTION */
+
+.modal-footer {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 10;
+  border-top: none;
+}
