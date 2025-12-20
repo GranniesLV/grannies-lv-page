@@ -1,6 +1,26 @@
 {
   "current": [
     {
+      "id": "13",
+      "title": "Akreditēts mobilitātes KA1 projekts <i>Pakāpieni</i>",
+      "date": "2025-06-01",
+      "projectNumber": "2025-1-LV01-KA121-ADU-000310262",
+      "timeframe": "01/06/2025 - 31/08/2026",
+      "description": "<p>Saskaņā ar izvirzītajiem mērķiem akreditētai biedrībai pieaugušo izglītībā, plānojam mācīšanās iespējas un kursus, kuros dalībnieki – pasniedzēji – apgūst zināšanas un iepazīstas ar labās prakses piemēriem.</p><p>Tēmas, ko plānojam ietvert mobilitātēs:</p><ul><li>Vispusīga, inovatīva senioru izglītība Latvijā, izmantojot labākās andragoģijas metodes</li><li>Valodas mācību metodikas uzlabošana pieaugušajiem izglītojamajiem un pasniedzējiem, kā arī kultūrizglītības elementu iekļaušana mācību programmās</li><li>Labbūtības un relaksācijas programmu izstrāde sasaistē ar āra un vides izglītību senioru auditorijai, kā arī metodiku apguve pasniedzējiem</li><li>Digitālās prasmes ikvienam mūža garumā</li></ul><ul><li><b>MĀCĪBU CENTRS:</b> <i>Krētas Universitātes fakultātes Mūžizglītības, sākumskolas izglītības e-mācību departaments</i></li><li><b>Kursu tēma:</b> <i>ARTIFICIAL INTELLIGENCE, SOFT SKILLS &amp; CREATIVITY IN THE CLASSROOM</i> (Mākslīgais intelekts – prasmes un radošums klasē)</li><li><b>Norises laiks:</b> 22.09. – 26.09.2025.</li><li><b>Dalībnieki:</b> 3 pasniedzējas</li></ul><p><b>Kā mums gāja:</b> Kursu dalībnieku vidū bija ne tikai vispārizglītojošo skolu pedagogi, bet arī pasniedzēji no vairākiem pieaugušo izglītības centriem un organizācijām – no Īrijas, Slovākijas un Francijas. Tā kā biedrība <i>Vecmāmiņas.lv</i> ir akreditēta Erasmus Pieaugušo izglītībā, bija īpaši vērtīgi iepazīt citu valstu pieredzi pieaugušo izglītošanā.</p><p>Darbs grupās un praktiskie uzdevumi veicināja sadarbības, komunikācijas un radošās domāšanas prasmes. Kursa atmosfēra bija iedvesmojoša un atbalstoša, stiprinot savstarpēju cieņu, sadarbību un draudzīgu gaisotni. Tas viss stiprināja pārliecību par savām spējām un deva motivāciju turpināt mācīties.</p><p>Paldies kursu organizētājiem – Krētas Universitātei, paldies līdzfinansētājam ES Erasmus+ un VIAA, kā arī biedrības <i>Vecmāmiņas.lv</i> projektu vadītājai Ritai Liepiņai.</p><p><b>Ieguvumi:</b></p><ul><li>Zināšanas mākslīgā intelekta jomā un stiprinātas digitālās prasmes</li><li>Jauni sadarbības partneri un valstis – biedrības atpazīstamības veicināšana</li><li>Pārliecība par savām spējām</li><li>Pieredze starpkultūru komunikācijā</li><li>Jaunu projektu īstenošanas iespējas</li></ul>",
+      "carouselId": "galleryCarouselPakapieni",
+      "carouselTextId": "carouselTextPakapieni",
+      "defaultCarouselText": "'Pakāpieni'",
+      "gallery": [
+        "pakapieni1.jpeg",
+        "pakapieni2.jpeg",
+        "pakapieni3.jpeg",
+        "pakapieni4.jpeg",
+        "pakapieni5.jpeg"
+      ]
+    }
+  ],
+  "realized": [
+    {
       "id": "0",
       "title": "Erasmus+ KA1 projekts <i>Stabilitāte</i>",
       "date": "2024-06-01",
@@ -8,9 +28,7 @@
       "timeframe": "01/06/2024 - 31/08/2025",
       "description": "<p>Saskaņā ar izvirzītajiem mērķiem, kas mums kā akreditētai biedrībai realizējami tuvākajos 4 gados, projektā <i>STABILITĀTE</i>  ir plānotas mobilitātes pasniedzējiem:</p> <ul><li><b>Mācību centrs <i>English Matters</i>  Īrijā, DUBLINĀ</b> (20.10. -26.10.2024)</li>Valodas mācību metodikas uzlabošana pieaugušajiem izglītojamajiem un pasniedzējiem, un kultūrizglītības elementu iekļaušana mācību programmās <ul><li>1 pasniedzēja <a href='../articles/erasmus-ka1-projekts-stabilitate.html#englishMatters'><button class='btn btn-info mx-5'>Uzzini kā mums gāja</button></a></li></ul><li><b>Mācību centrs <i>Dante</i> Horvātijā, RIJEKĀ</b> (17.03. -21.03.2025)</li>Inovatīva senioru izglītība, izmantojot labākās andragoģijas metodes<ul><li>3 pasniedzējas <a href='../articles/erasmus-ka1-projekts-stabilitate.html#dante'><button class='btn btn-info mx-5'>Uzzini kā mums gāja</button></a></li></ul><li><b>Mācību centrs <i>Mobility Friends</i> Portugālē, MADEIRĀ, FUNŠALĀ</b> (12.05. – 16.05.2025)</li>Labklājība un dzīves kvalitāte senioru vecumā – teorija un prakse<ul><li>2 pasniedzējas <a href='../articles/erasmus-ka1-projekts-stabilitate.html#mobilityFriends'><button class='btn btn-info mx-5'>Uzzini kā mums gāja</button></a></li></ul>",
       "gallery": []
-    }
-  ],
-  "realized": [
+    },
     {
       "id": "1",
       "title": "Erasmus+ KA2 projekts <i>TETE</i>",
