@@ -34,7 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 .map(
                   (image, index) => `
           <div class="carousel-item ${index === 0 ? "active" : ""}">
-            <img src="../assets/images/${image}" class="d-block w-100" alt="project image">
+                  <div class="carousel-image-wrapper">
+                    <img src="../assets/images/${image}" class="carousel-image" alt="project image">
+                  </div>
           </div>`
                 )
                 .join("")
@@ -86,11 +88,11 @@ document.addEventListener("DOMContentLoaded", function () {
           ${
             galleryHtml
               ? `
-            <div class="container">
+            <div class="container my-4">
               <div id="${
                 project.carouselId
-              }" class="carousel slide mx-auto" data-bs-ride="carousel" style="width: 400px;">
-                <div class="carousel-inner d-flex align-items-center" style="height: 400px;">
+              }" class="carousel slide mx-auto" data-bs-ride="carousel">
+                <div class="carousel-inner">
                   ${galleryHtml}
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#${
@@ -135,7 +137,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 .map(
                   (image, index) => `
                 <div class="carousel-item ${index === 0 ? "active" : ""}">
-                  <img src="../assets/images/${image}" class="d-block w-100" alt="meeting">
+                <div class="carousel-image-wrapper">
+                  <img src="../assets/images/${image}" class="carousel-image" alt="meeting">
+                </div>
                 </div>`
                 )
                 .join("")
@@ -185,8 +189,8 @@ document.addEventListener("DOMContentLoaded", function () {
                   galleryHtml
                     ? `
                   <div class="container">
-                    <div id="${project.carouselId}" class="carousel slide mx-auto" data-bs-ride="carousel" style="width: 400px;">
-                      <div class="carousel-inner d-flex align-items-center" style="height: 400px;">
+                    <div id="${project.carouselId}" class="carousel slide mx-auto" data-bs-ride="carousel">
+                      <div class="carousel-inner">
                         ${galleryHtml}
                       </div>
                       <button class="carousel-control-prev" type="button" data-bs-target="#${project.carouselId}" data-bs-slide="prev">
