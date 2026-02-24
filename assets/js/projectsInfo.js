@@ -350,7 +350,7 @@ export const projects = {
         "inovation1.jpg",
         "inovation2.png",
         "inovation3.png",
-        "inovation4.png",
+        "inovation4.jpeg",
         "inovation5.png",
       ],
     },
