@@ -1,9 +1,11 @@
 <!doctype html>
-<html lang="en" data-bs-theme="light">
+<html lang="lv" data-bs-theme="light">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Vecmāmiņas.lv — Trešās paaudzes universitāte, senioru izglītība un aktualitātes Latvijā.">
   <title>Vecmāmiņas.lv</title>
   <link rel="icon" type="image/x-icon" href="./assets/images/icons/favicon.ico">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -11,555 +13,52 @@
   <link rel="stylesheet" href="./assets/css/bootstrap.css">
   <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
-<!-- BODY -->
 
 <body>
+
   <!-- HEADER -->
   <div id="header"></div>
 
+  <!-- GALVENAIS SATURS -->
   <main class="container">
     <img class="img-fluid mb-5 main-img"
       src="https://picflow.media/images/resized/1920x906q85/d836e9c5-6ba1-430f-ba55-6a718da04aed.jpg"
-      alt="teacup on top of books"
+      alt="Tējkanna uz grāmatām"
       title="Photo by Ylanite Koppens: https://www.pexels.com/photo/photo-of-teacup-on-top-of-books-1831744/">
 
-    <h1 class="mb-5" id="welcome">Laipni lūgti <span><i style="font-weight: 500;">Vecmāmiņas.lv</i></span> !</h1>
-
-    <!--~ “INFO” -->
-    <!-- <h1 style="color: red;">! ! !</h1>
-    <p>
-      Šobrīd lapa ir izstrādes procesā – lēnām papildinām saturu, lai padarītu to vēl noderīgāku un interesantāku.
-      Sekojiet
-      līdzi jaunumiem un aktualitātēm!
-    </p> -->
-
+    <h1 class="mb-5" id="welcome">
+      Laipni lūgti <span><i style="font-weight: 500;">Vecmāmiņas.lv</i></span>!
+    </h1>
   </main>
 
-  <!--~ Modālais logs pop-up "Jaunie raksti" ar scroll funkciju -->
+  <!-- MODĀLAIS LOGS — Jaunākie raksti -->
   <div class="modal fade" id="newsPopUpModal" tabindex="-1" aria-labelledby="newsPopUpModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
+
         <div class="modal-header">
           <h5 class="modal-title" id="newsPopUpModalLabel">Jaunākie raksti</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Aizvērt"></button>
         </div>
+
         <div class="modal-body">
           <div class="d-flex flex-column align-items-center gap-3">
-            <div class="text-center">
-              <hr>
 
-              <!--^ Jaunumi -->
-              <h4>Jaunumi</h4>
-
-              <!--! 30.marta 2026 Kristīgās fakultātes nodarbības aicinājums-->
-              <!-- <div class="text-center">
-                <hr>
-                <h4 class="fw-bold mb-3">
-                  ✝️ Aicinām uz Trešās paaudzes universitātes Kristīgās fakultātes nodarbību!
-                </h4>
-
-                <p>
-                  <strong>📅 Datums:</strong> 30. marts plkst. 14:00<br>
-                  <strong>📍 Norises vieta:</strong> Lutera Akadēmija, Alksnāja iela 3, Vecrīga
-                </p>
-
-                <p class="mt-3">
-                  Trešās paaudzes universitāte aicina turpināt izglītoties un augt
-                  <strong>garīgi, intelektuāli un sociāli</strong>.
-                </p>
-
-                <p>
-                  Nodarbībā padziļināsim izpratni par ticību un dzīves vērtībām,
-                  kā arī stiprināsim garīgo labklājību un iekšējo mieru.
-                </p>
-
-                <p>
-                  <strong>Tēma:</strong> <em>Lieldienas, Klusā nedēļa</em>
-                </p>
-
-                <p class="mb-3">
-                  <strong>Tiksimies ar:</strong>
-                  Rīgas Doma dekānu <strong>Eliju Godiņu</strong>
-                </p>
-
-                <div class="mt-4">
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLScuBV0zqPsb9FEJUje3KvphPZHdw9jmtiN8eP4k5PgxX9HnGw/viewform"
-                    target="_blank" rel="noopener" class="btn btn-primary mt-3" role="button"
-                    aria-label="Reģistrēties nodarbībai">
-                    📝 Pieteikties lekcijai
-                  </a>
-                </div>
-              </div> -->
-
-              <!--! 25.marta 2026 RSU Veselības fakultātes lekcijas -->
-              <!-- <div class="text-center">
-                <hr>
-
-                <h4 class="fw-bold mb-2">RSU Veselības fakultātes lekcijas</h4>
-
-                <p class="text-muted mb-3">
-                  Trešās paaudzes universitātes VESELĪBAS fakultātes atklāšana
-                </p>
-
-                <div class="mb-3">
-                  <span class="badge bg-secondary">📅 25.03.2026</span>
-                  <span class="badge bg-light text-dark">📍 RSU, Dzirciema iela 16</span>
-                </div>
-
-                <p class="small mb-2">
-                  <strong>🕚 11:00 - 12:30</strong>
-                </p>
-
-                <p class="small mb-3">
-                  Lekcija: <em>"Ēšanas paradumi un iespējamās korekcijas dzīves trešajā trimestrī"</em>
-                </p>
-
-                <p class="small mb-3">
-                  Dalības maksa: <strong>5 EUR</strong><br>
-                  Pulcēšanās: vestibilā, 1. stāvā
-                </p>
-
-                <div class="alert alert-warning py-2 px-3 d-inline-block">
-                  ⏳ Pieteikšanās līdz 23. martam
-                </div>
-
-                <p class="small mt-3 mb-3">
-                  Lekcijas tiek organizētas sadarbībā ar Rīgas Stradiņa universitātes
-                  Mūžizglītības centru un Ģimenes veselības centru, piedāvājot
-                  praktiskas un ikdienā noderīgas zināšanas.
-                </p>
-
-                <div class="mt-3">
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWXPAAFJgLWvyzWXSaE0bPUne6byEeALzut0PbCUoRhxjgdQ/viewform?usp=header"
-                    target="_blank" class="btn btn-primary" role="button">
-                    📝 Pieteikties lekcijai
-                  </a>
-                </div>
-
-                <p class="mt-3 text-muted small">
-                  Papildus informācija: vecmaminas.riga@gmail.com
-                </p>
-              </div> -->
-
-              <!--! LKA kultūrizglītojošu lekciju cikls senioriem -->
-              <div class="text-center">
-                <hr>
-                <h4 class="fw-bold mb-3">
-                  LKA lekciju cikls senioriem – Kultūras izpratne, kritiskā domāšana un radošā pašizpausme
-                </h4>
-
-                <a href="/pages/topicality.html#lkaSenioruLekcijas">
-                  <img src="./assets/images/topicality/events/lekciju_cikls_senioriem.jpeg" class="img-fluid rounded"
-                    alt="LKA kultūrizglītojošu lekciju cikls senioriem">
-                </a>
-
-                <p class="mt-3 text-muted">
-                  Lekcijas senioriem Miera ielas kvartālā no 18. marta līdz 10. jūnijam.
-                  Dalība bez maksas, vietu skaits ierobežots.
-                </p>
-
-                <a href="https://forms.gle/doRzrMhun95RL4Sf7" target="_blank" class="btn btn-primary mt-2"
-                  role="button">
-                  📝 Pieteikties lekciju ciklam
-                </a>
-              </div>
-
-              <!-- <div class="text-center">
-                <hr>
-                <h4>
-                  Stāstījumi par Atgāzeni
-                </h4>
-              
-                <img src="./assets/images/topicality/news/StastijumiParAtgazeni.jpeg"
-                  class="img-fluid rounded" alt="Stāstījumi par Atgāzeni afiša">
-              
-              </div> -->
-
-              <div class="text-center">
-                <hr>
-                <h4>Mēs ieguvām Erasmus+ Eiropas Inovatīvas mācīšanas balvu</h4>
-                <a href="/pages/topicality.html#eiropasInovativasMacisanasBalva" target="_blank">
-                  <img src="./assets/images/topicality/news/InovativasMacisanasBalva.png" class="img-fluid rounded"
-                    alt="Inovatīvās Mācīšanās Balva">
-                </a>
-                <a href="/pages/topicality.html#eiropasInovativasMacisanasBalva" target="_blank"
-                  class="btn btn-info rounded-pill px-3 mt-2" role="button">
-                  Aplūkot rakstu</a>
-              </div>
-
-              <div class="text-center">
-                <hr>
-                <h4>
-                  Apskatiet jaunākos notikumus mūsu mājaslapā!
-                </h4>
-
-                <p class="mt-2 mb-3">
-                  Nepalaid garām interesantākos notikumus un aktualitātes –
-                  apskati sadaļu <strong>“Aktualitātes”</strong> -> <strong>“Notikumi”</strong> mūsu mājaslapā, lai
-                  uzzinātu par
-                  lekcijām, semināriem un citām aktivitātēm.
-                </p>
-
-                <a href="/pages/topicality.html#events" class="btn btn-info rounded-pill px-3 mt-2" role="button">
-                  Aplūkot notikumus
-                </a>
-              </div>
-
-
-              <div class="text-center">
-                <hr>
-                <h4>
-                  2026. gadu Trešās paaudzes universitātē uzsāksim ar īpašu vieslekciju
-                </h4>
-
-                <p class="mt-2 mb-3">
-                  Jauno, <strong>2026. gadu</strong>, Trešās paaudzes universitātes lekcijas varēsim uzsākt ar
-                  Latvijas Kultūras akadēmijas rektora, profesora
-                  <strong>Dāvja Sīmaņa</strong> vieslekciju
-                  <em>“Kā skatīties kino?”</em>,
-                  <strong>21. janvārī plkst. 10:00</strong>, LKA Gara mājā.
-                  <br>
-                  To tad iezīmējam jau kalendārā!
-                </p>
-
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX1ny8CAzcGR5eeAvp-mJvQvTaGtqJ3cCvzA&s"
-                  class="img-fluid rounded" alt="Trešās paaudzes universitātes vieslekcija ar profesoru Dāvi Sīmani">
-
-                <p class="mt-3 fw-semibold text-primary">
-                  📅 Iezīmējam šo datumu kalendārā!
-                </p>
-
-              </div>
-
-
-              <!-- <div class="text-center">
-                <hr>
-                <h4 class="fw-bold mb-3">📚 Aicinām uz nākamo Trešās paaudzes universitātes nodarbību!</h4>
-
-                <p>
-                  <strong>📅 Datums:</strong> 26. novembris plkst. 11:00<br>
-                  <strong>📍 Norises vieta:</strong> LKA Gara māja (2. stāvs), Miera iela 58a, Rīga
-                </p>
-
-                <p class="mt-3">
-                  Kultūras studiju trešajā nodarbībā <strong>mēģināsim saprast mākslas rašanās teorijas</strong> - kā no
-                  paleolīta līdz mūsdienām mainās priekšstats par mākslu un mākslinieku,
-                  iezīmējot sievietes tēla nozīmi.
-                </p>
-
-                <p class="mb-3"><strong>Nodarbību vadīs:</strong> LKA mākslas vēstures docente <strong>Zane Grigoroviča</strong>.
-                </p>
-
-                <div class="mt-4">
-                  <a href="https://forms.gle/JsvpV518CuSae5U26" target="_blank" class="btn btn-primary mt-3" role="button" aria-label="Reģistrēties">
-                    📝 Reģistrēties nodarbībai līdz 21. novembrim</a>
-                </div>
-
-              </div> -->
-
-              <!-- <div class="text-center">
-                <hr>
-                <h4 class="fw-bold mb-3">Trešās paaudzes universitāte — Otrā senioru tikšanās</h4>
-
-                <p>
-                  <strong>📅 Datums:</strong> 22. oktobris, plkst. 14:00<br>
-                  <strong>📍 Norises vieta:</strong> LKA Gara māja (2. stāvs), Miera iela 58a, Rīga
-                </p>
-
-                <p class="mt-3">
-                  Kultūras izpratnes principus saprotamā un atraktīvā veidā
-                  ieskicēja lektore <br> <strong>Rūta Muktupāvela</strong>. <br>
-                  Kultūras izpratne palīdz saprast, kā cilvēki dažādās sabiedrībās domā, jūt un rīkojas.
-                </p>
-
-                <a href="/pages/topicality.html#otraTiksanas" class="btn btn-info rounded-pill px-3 mt-2" role="button">
-                  Aplūkot rakstu</a>
-
-              </div> -->
-
-              <!-- <div class="text-center">
-                <hr>
-                <h4 class="fw-bold mb-3">Trešās paaudzes universitātes otrā nodarbība ar Rūtu Muktupāvelu</h4>
-              
-                <p>
-                  <strong>📅 Datums:</strong> 22. oktobris, plkst. 14:00<br>
-                  <strong>📍 Norises vieta:</strong> LKA Gara māja (2. stāvs), Miera iela 58a, Rīga
-                </p>
-              
-                <p class="mt-3">
-                  Profesore <strong>Rūta Muktupāvela</strong> aicina uz sarunu par to, kā gadsimtu gaitā mainījusies kultūras jēdziena
-                  izpratne
-                  un kādas kultūras izpratnes sastopamas šodien.
-                </p>
-              
-                <div class="mt-4">
-                  <a href="https://forms.gle/tYxYy6tHEH42UWFh7" target="_blank" class="btn btn-success rounded-pill px-4 shadow-sm">
-                    📝 Reģistrēties nodarbībai līdz 20. oktobrim
-                  </a>
-                </div>
-
-                <a href="/pages/topicality.html#otraNodarbiba"
-                  class="btn btn-info rounded-pill px-3 mt-2" role="button">
-                  Aplūkot rakstu</a>
-
-              </div> -->
-
-
-              <div class="text-center">
-                <hr>
-                <h4>1.oktobrī tika atklāta Trešās paaudzes universitāte kultūras studijās</h4>
-                <a href="https://www.facebook.com/kulturasakademija/posts/pfbid0D2WcmG3fyTKNaWT5hRuofDnsujdFBddq3ZEPQqnLQ2reVB7s2Mph8ALbcqFn3PKrl?rdid=O9eQuNZPbx7m0wqL#"
-                  target="_blank">
-                  <img src="./assets/images/topicality/news/LKA_TPU_atklasana.png" class="img-fluid rounded"
-                    alt="Trešās paaudzes universitāte kultūras studijās">
-                </a>
-                <a href="https://www.facebook.com/kulturasakademija/posts/pfbid0D2WcmG3fyTKNaWT5hRuofDnsujdFBddq3ZEPQqnLQ2reVB7s2Mph8ALbcqFn3PKrl?rdid=O9eQuNZPbx7m0wqL#"
-                  target="_blank" class="btn btn-info rounded-pill px-3 mt-2" role="button">
-                  Aplūkot facebook ierakstu</a>
-              </div>
-
-              <div class="text-center">
-                <hr>
-                <h4>Latvijas Kultūras akadēmija veido kultūras mūžizglītības piedāvājumu senioriem</h4>
-                <a href="/pages/topicality.html#tresasPaaudzesKulturasUniversitate" target="_blank">
-                  <img src="./assets/images/topicality/news/TresasPaaudzesUniversitatesKulturasStudijasAtklasana.jpeg"
-                    class="img-fluid rounded" alt="Inovatīvās Mācīšanās Balva">
-                </a>
-                <a href="/pages/topicality.html#tresasPaaudzesKulturasUniversitate"
-                  class="btn btn-info rounded-pill px-3 mt-2" role="button">
-                  Aplūkot rakstu</a>
-              </div>
-
-              <hr>
-
-              <!--^ Mūsu kalendārs -->
-              <div class="text-center">
-                <hr>
-                <h4>Mūsu kalendārs</h4>
-                <h6 id="calendar-description"><b>Šomēnes</b>: Jaunais Vārdu Krājums</h6>
-                <a id="calendar-link" href="./assets/documents/kalendars25_26.pdf" target="_blank">
-                  <img id="calendar-image" src="./assets/images/calendar/defaultCalendar25_26.png"
-                    class="img-fluid rounded" alt="Raksta Kalendārs attēls">
-                </a>
-                <a id="calendar-button" href="./assets/documents/kalendars25_26.pdf" target="_blank"
-                  class="btn btn-info rounded-pill px-3 mt-2" role="button">
-                  Aplūkot kalendāru</a>
-              </div>
-
-              <hr>
-
-              <!--^ Sekojiet jaunumiem mūsu Facebook lapā -->
-              <div class="text-center">
-                <hr>
-                <h4>Sekojiet jaunumiem mūsu Facebook lapā</h4>
-                <a href="https://www.facebook.com/profile.php?id=61574240234795" target="_blank">
-                  <img src="./assets/images/kamolinsGramataPulkstenis.jpeg" class="img-fluid rounded"
-                    alt="Raksta Kalendārs attēls">
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=61574240234795" target="_blank"
-                  class="btn btn-info rounded-pill px-3 mt-2" role="button">
-                  Aplūkot lapu</a>
-              </div>
-
-              <hr>
-
-              <!--^ Jaunākais Ieraksts Facebook -->
-
-              <h4>Jaunākie Ieraksti Facebook</h4>
-
-              <!--! Senioru festivāls Kuldīgā -->
-              <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0rS5AbhNoXcrTjpozaeRPpeTFreSFCc9y3otoY3BsvWxo1Uy8i12FRwDt2c2rWbPul&id=61574240234795"
-                target="_blank" style="text-decoration: none;">
-                <div class="fb-post-container mx-auto" style="max-width: 500px;">
-                  <div class="fb-post-header">
-                    <img src="./assets/images/granniesLogoWihoutLetters.png" alt="Profile Picture"
-                      class="fb-profile-pic">
-                    <div class="fb-post-meta">
-                      <p class="fb-post-name">Vecmāmiņas.lv</p>
-                      <p class="fb-post-time">September 17, 2025 at 8:00 PM · Public</p>
-                    </div>
-                  </div>
-                  <div class="fb-post-content">
-                    <p>🎉 Senioru festivāls Kuldīgā!
-                      17. septembrī notika Trešās paaudzes universitāšu NVO festivāls “Mūžs kā zināšanu ceļš”, kas
-                      pulcēja senioru skolas,
-                      ekspertus un viesus no Latvijas, Portugāles, Polijas, Lietuvas un Igaunijas.... <span
-                        class="see_more">See more</span></p>
-                    <img src="./assets/images/topicality/senioruFestivalsKuldiga/title_kuldiga.jpeg"
-                      alt="Senioru festivāls Kuldīgā" class="fb-post-image img-fluid">
-                  </div>
-                  <div class="fb-post-actions">
-                    <div class="fb-action-btn">Like</div>
-                    <div class="fb-action-btn">Comment</div>
-                    <div class="fb-action-btn">Share</div>
-                  </div>
-                  <div class="fb-footer">
-                    <div style="color: #606770; text-decoration: none;">View on Facebook</div>
-                  </div>
-                </div>
-              </a>
-
-              <!--! Ūdens gleznu un skaņu darbnīca -->
-              <!-- <a href="https://www.facebook.com/share/p/1BHcmmx7e5/?mibextid=wwXIfr" target="_blank"
-                style="text-decoration: none;">
-                <div class="fb-post-container mx-auto" style="max-width: 500px;">
-                  <div class="fb-post-header">
-                    <img src="./assets/images/granniesLogoWihoutLetters.png" alt="Profile Picture"
-                      class="fb-profile-pic">
-                    <div class="fb-post-meta">
-                      <p class="fb-post-name">Vecmāmiņas.lv</p>
-                      <p class="fb-post-time">July 16, 2025 at 5:00 PM · Public</p>
-                    </div>
-                  </div>
-                  <div class="fb-post-content">
-                    <p>Kas? "ŪDENS GLEZNU UN SKAŅU DARBNĪCAS"<br>
-                      Kur? Ziepju iela 13, Rīga, Dienas centra “Sirdsgaisma” telpās <br>
-                      Kad? 2025.gada 11., 16., 19., un 26.jūnijā... <span class="see_more">See more</span></p>
-                    <img src="./assets/images/fb_module/udens_gleznu_darbnicas.jpeg"
-                      alt="Ūdens gleznu un skaņu darbnīcas" class="fb-post-image img-fluid">
-                  </div>
-                  <div class="fb-post-actions">
-                    <div class="fb-action-btn">Like</div>
-                    <div class="fb-action-btn">Comment</div>
-                    <div class="fb-action-btn">Share</div>
-                  </div>
-                  <div class="fb-footer">
-                    <div style="color: #606770; text-decoration: none;">View on Facebook</div>
-                  </div>
-                </div>
-              </a> -->
-
-              <!--! Ūdens gleznas -->
-              <!-- <a href="https://www.facebook.com/share/p/1AwBFd3wLD/?mibextid=wwXIfr" target="_blank"
-                style="text-decoration: none;">
-                <div class="fb-post-container mx-auto" style="max-width: 500px;">
-                  <div class="fb-post-header">
-                    <img src="./assets/images/granniesLogoWihoutLetters.png" alt="Profile Picture"
-                      class="fb-profile-pic">
-                    <div class="fb-post-meta">
-                      <p class="fb-post-name">Vecmāmiņas.lv</p>
-                      <p class="fb-post-time">June 5, 2025 at 2:00 PM · Public</p>
-                    </div>
-                  </div>
-                  <div class="fb-post-content">
-                    <p>Priecīga ziņa mums👵🏻👨🏻‍🦳 un bērniem 👧👨‍🦱
-                      🖼️ Ar Rīgas valstspilsētas IKSD piešķirto finansējumu varēsim realizēt projektu “Ūdens gleznu un
-                      skaņu darbnīcas” EBRU
-                      tehnikā. Nodarbības notiks Rīgā, Ziepniekkalna apkaimes bērniem un jauniešiem... <span
-                        class="see_more">See more</span>
-                    </p>
-                    <img src="./assets/images/fb_module/udens_gleznas.jpeg" alt="Post Image"
-                      class="fb-post-image img-fluid">
-                  </div>
-                  <div class="fb-post-actions">
-                    <div class="fb-action-btn">Like</div>
-                    <div class="fb-action-btn">Comment</div>
-                    <div class="fb-action-btn">Share</div>
-                  </div>
-                  <div class="fb-footer">
-                    <div style="color: #606770; text-decoration: none;">View on Facebook</div>
-                  </div>
-                </div>
-              </a> -->
-
-              <!--! Mobility Friends -->
-              <a href="https://www.facebook.com/share/p/14GdwNfJUJi/?mibextid=wwXIfr" target="_blank"
-                style="text-decoration: none;">
-                <div class="fb-post-container mx-auto" style="max-width: 500px;">
-                  <div class="fb-post-header">
-                    <img src="./assets/images/granniesLogoWihoutLetters.png" alt="Profile Picture"
-                      class="fb-profile-pic">
-                    <div class="fb-post-meta">
-                      <p class="fb-post-name">Vecmāmiņas.lv</p>
-                      <p class="fb-post-time">June 5, 2025 at 1:40 PM · Public</p>
-                    </div>
-                  </div>
-                  <div class="fb-post-content">
-                    <p>📖 Esam piedalījušās vēl vienā starptautiskā projektā👌 esam guvušas vēl vienu jaunu pieredzi un
-                      dalījušās ar savām
-                      dzīves pieredzēm👯‍♀️
-                      📖 Mācību centrs “Mobility Friends” Portugālē FUNŠALĀ (12.05. – 16.05.2025.) “Labklājība un dzīves
-                      kvalitāte senioru
-                      vecumā – teorija un prakse”... <span class="see_more">See more</span>
-                    </p>
-                    <img src="./assets/images/fb_module/mobility_friends.jpeg" alt="Post Image"
-                      class="fb-post-image img-fluid">
-                  </div>
-                  <div class="fb-post-actions">
-                    <div class="fb-action-btn">Like</div>
-                    <div class="fb-action-btn">Comment</div>
-                    <div class="fb-action-btn">Share</div>
-                  </div>
-                  <div class="fb-footer">
-                    <div style="color: #606770; text-decoration: none;">View on Facebook</div>
-                  </div>
-                </div>
-              </a>
-
-              <!--! Hvala Rijeka! -->
-              <a href="https://www.facebook.com/share/p/1BLR35Gg73/?mibextid=wwXIfr" target="_blank"
-                style="text-decoration: none;">
-                <div class="fb-post-container mx-auto" style="max-width: 500px;">
-                  <div class="fb-post-header">
-                    <img src="./assets/images/granniesLogoWihoutLetters.png" alt="Profile Picture"
-                      class="fb-profile-pic">
-                    <div class="fb-post-meta">
-                      <p class="fb-post-name">Vecmāmiņas.lv</p>
-                      <p class="fb-post-time">March 25, 2025 at 3:15 PM · Public</p>
-                    </div>
-                  </div>
-                  <div class="fb-post-content">
-                    <p>
-                      Hvala, Rijeka!!!
-                      17.-21.marts 2025... <span class="see_more">See more</span>
-                    </p>
-                    <img src="./assets/images/fb_module/Hvala_Rijeka.jpeg" alt="Post Image"
-                      class="fb-post-image img-fluid">
-                  </div>
-                  <div class="fb-post-actions">
-                    <div class="fb-action-btn">Like</div>
-                    <div class="fb-action-btn">Comment</div>
-                    <div class="fb-action-btn">Share</div>
-                  </div>
-                  <div class="fb-footer">
-                    <div style="color: #606770; text-decoration: none;">View on Facebook</div>
-                  </div>
-                </div>
-              </a>
-
-              <div class="text-center">
-                <hr>
-                <h4>Iesakām aplūkot kā mums gāja Mācību centrā Dante Horvātijā, RIJEKĀ</h4>
-                <a href="./articles/erasmus-ka1-projekts-stabilitate.html#dante">
-                  <img src="./assets/images/titles/Dante.png" class="img-fluid rounded" alt="Raksta attēls">
-                </a>
-                <a href="./articles/erasmus-ka1-projekts-stabilitate.html#dante"
-                  class="btn btn-info rounded-pill px-3 mt-3" role="button">
-                  Kā mums gāja</a>
-              </div>
-
-              <!--^ 2024.gada pārskats -->
-              <!-- <div class="text-center">
-                <hr>
-                <h4>2024.gada pārskats</h4>
-                <a href="./pages/topicality.html#annualMeeting2024">
-                  <img src="./assets/images/titles/2024GadaParskats.png" class="img-fluid rounded" alt="Raksta attēls">
-                </a>
-                <a href="./pages/topicality.html#annualMeeting2024" class="btn btn-info rounded-pill px-3 mt-3"
-                  role="button">
-                  2024. Gada pārskata sapulce</a>
-              </div> -->
-
+            <!-- Ziņas tiek ielādētas automātiski no /modal_popup/ mapes -->
+            <div id="news-container" class="w-100 text-center">
+              <p class="text-muted">Ielādē ziņas...</p>
             </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aizvērt</button>
+
           </div>
         </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aizvērt</button>
+        </div>
+
       </div>
     </div>
   </div>
-
 
   <!-- FOOTER -->
   <div id="footer"></div>
@@ -568,8 +67,8 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script type="module" src="./assets/js/calendarData.js"></script>
   <script type="module" src="./assets/js/main.js"></script>
+
 </body>
 
 </html>
