@@ -95,7 +95,7 @@ const newCalendarFile = "/assets/documents/kalendars25_26.pdf";
 // Pašreizējais datums
 const today = new Date();
 //const today = new Date(2026, 0, 6);
-const currentMonth = today.getMonth() + 1; // 1–12
+const currentMonth = today.getMonth() + 1; // 1-12
 const currentYear = today.getFullYear();
 console.log(currentMonth, currentYear);
 

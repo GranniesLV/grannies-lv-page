@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((response) => response.json()) // Parsē datus
     .then((data) => {
       const currentAccordion = document.getElementById(
-        "currentProjectAccordion"
+        "currentProjectAccordion",
       );
       const realizedAccordion = document.getElementById("projectAccordion");
 
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   <div class="carousel-image-wrapper">
                     <img src="../assets/images/${image}" class="carousel-image" alt="project image">
                   </div>
-          </div>`
+          </div>`,
                 )
                 .join("")
             : "";
@@ -53,8 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const projectHtml = `
     <div class="accordion-item" data-name="${project.title}" data-date="${
-          project.date
-        }">
+      project.date
+    }">
       <h2 class="accordion-header" id="heading${project.id}">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
           data-bs-target="#collapse${
@@ -67,8 +67,8 @@ document.addEventListener("DOMContentLoaded", function () {
       <div id="collapse${
         project.id
       }" class="accordion-collapse collapse" aria-labelledby="heading${
-          project.id
-        }"
+        project.id
+      }"
         data-bs-parent="#currentProjectAccordion">
 
         <div class="accordion-body">
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="carousel-image-wrapper">
                   <img src="../assets/images/${image}" class="carousel-image" alt="meeting">
                 </div>
-                </div>`
+                </div>`,
                 )
                 .join("")
             : "";
@@ -155,8 +155,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const projectHtml = `
           <div class="accordion-item" data-name="${project.title}" data-date="${
-          project.date
-        }">
+            project.date
+          }">
             <h2 class="accordion-header" id="heading${project.id}">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapse${
@@ -168,8 +168,8 @@ document.addEventListener("DOMContentLoaded", function () {
             <div id="collapse${
               project.id
             }" class="accordion-collapse collapse" aria-labelledby="heading${
-          project.id
-        }"
+              project.id
+            }"
               data-bs-parent="#projectAccordion">
               <div class="accordion-body">
                 <p><strong>${project.subtitle || ""}</strong></p>
@@ -233,9 +233,9 @@ const captionsForTETE = [
 ];
 
 const captionsForFlexibli = [
-  "Draudzības vakars Islandē bija iespaidīgs – kursu dalībnieki no 9 valstīm",
-  "Draudzības vakars Islandē bija iespaidīgs – kursu dalībnieki no 9 valstīm",
-  "Kursi beigušies sertifikāti un dāvanas saņemtas – grupa no Latvijas",
+  "Draudzības vakars Islandē bija iespaidīgs - kursu dalībnieki no 9 valstīm",
+  "Draudzības vakars Islandē bija iespaidīgs - kursu dalībnieki no 9 valstīm",
+  "Kursi beigušies sertifikāti un dāvanas saņemtas - grupa no Latvijas",
   "Nodarbība pie vienas no pasniedzējām - radoša, atraktīva! <br>Apguvām ļoti noderīgas metodes (gan bērnu, gan pieaugušo izglītošanas procesam).",
 ];
 
@@ -252,7 +252,7 @@ function changeCarouselText(carouselId, captionsArray) {
   $(`#${carouselId}`).on("slid.bs.carousel", function (event) {
     const index = event.to;
     document.getElementById(
-      carouselId.replace("galleryCarousel", "carouselText")
+      carouselId.replace("galleryCarousel", "carouselText"),
     ).innerHTML = captionsArray[index];
   });
 }
@@ -261,7 +261,7 @@ function changeCarouselText(carouselId, captionsArray) {
 function sortProjects(sortBy) {
   const container = document.getElementById("projectsContainer");
   const projects = Array.from(
-    container.getElementsByClassName("accordion-item")
+    container.getElementsByClassName("accordion-item"),
   );
 
   // Funkcija, kas noņem visus HTML tagus no teksta

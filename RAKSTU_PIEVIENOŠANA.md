@@ -4,13 +4,13 @@
 
 Visi raksti glabājas mapē `articles/topicality/` trijās apakšmapēs:
 
-| Mape | Sadaļa lapā | Konteiners |
-|------|------------|------------|
-| `articles/topicality/news/` | Jaunumi | `#topicality-news-container` |
-| `articles/topicality/events/` | Notikumi | `#topicality-events-container` |
+| Mape                              | Sadaļa lapā                  | Konteiners                         |
+| --------------------------------- | ---------------------------- | ---------------------------------- |
+| `articles/topicality/news/`       | Jaunumi                      | `#topicality-news-container`       |
+| `articles/topicality/events/`     | Notikumi                     | `#topicality-events-container`     |
 | `articles/topicality/university/` | Trešās paaudzes universitāte | `#topicality-university-container` |
 
-Failu saraksti atrodas `assets/js/main.js` — masīvi `topicalityNews`, `topicalityEvents`, `topicalityUniversity`.
+Failu saraksti atrodas `assets/js/main.js` -masīvi `topicalityNews`, `topicalityEvents`, `topicalityUniversity`.
 
 ---
 
@@ -22,7 +22,7 @@ Faila nosaukuma formāts: `GGGG-MM-DD_pilseta_isissapraksts.html`
 
 Piemērs: `2026-04-15_riga_jauna-lekcija.html`
 
-**Faila saturs** — tikai raksta HTML fragments (bez `<html>`, `<head>`, `<body>`):
+**Faila saturs** -tikai raksta HTML fragments (bez `<html>`, `<head>`, `<body>`):
 
 ```html
 <div class="container my-5" id="unikalsId">
@@ -30,7 +30,7 @@ Piemērs: `2026-04-15_riga_jauna-lekcija.html`
 
   <p>Teksts...</p>
 
-  <hr>
+  <hr />
 </div>
 ```
 
@@ -51,7 +51,7 @@ const topicalityNews = [
 ];
 ```
 
-**Kārtība:** Jaunākais raksts — **pirmais** masīvā (augšā). Vecākais — **pēdējais** (apakšā).
+**Kārtība:** Jaunākais raksts -**pirmais** masīvā (augšā). Vecākais -**pēdējais** (apakšā).
 
 ---
 
@@ -61,7 +61,8 @@ Ja raksts ir sadaļā **Notikumi** un tam ir `id`, pievieno pogu `pages/topicali
 
 ```html
 <a href="#unikalsId" class="btn btn-info rounded-pill px-3 m-2" role="button">
-  Notikuma nosaukums</a>
+  Notikuma nosaukums</a
+>
 ```
 
 ---
@@ -74,7 +75,7 @@ Ja raksts ir sadaļā **Notikumi** un tam ir `id`, pievieno pogu `pages/topicali
 <div class="container my-5">
   <h2 class="fw-bold text-center">Jaunā lekcija</h2>
   <p>Apraksts...</p>
-  <hr>
+  <hr />
 </div>
 ```
 
@@ -95,4 +96,4 @@ const topicalityNews = [
 ## Kā darbojas tehniski
 
 `main.js` funkcija `loadTopicality()` nolasa masīvus un ar `fetch()` ielādē katru HTML failu lapā.  
-Raksti tiek ielādēti **tādā secībā, kādā tie ir masīvā** — tāpēc jaunākais jāliek augšā.
+Raksti tiek ielādēti **tādā secībā, kādā tie ir masīvā** -tāpēc jaunākais jāliek augšā.

@@ -65,9 +65,9 @@ export const projects = {
         Tā palīdz senioriem attīstīties, piedalīties brīvprātīgajā darbā un sniegt ieguldījumu sabiedrībā.</p>
         <p><strong>Galvenie sasniegumi:</strong></p><ul><li>Organizēti 5 projekta izplatīšanas pasākumi</li>
         <li>Izveidoti 3 intelektuālie galaprodukti:</li>
-        <ul><li><strong>Mācību metožu rīks</strong> (IO1) – pieejams internetā</li>
-        <li><strong>Senioru Balvas programma</strong> (IO2) – sistēma brīvprātīgo uzskaitei un apbalvošanai</li>
-        <li><strong>Rokasgrāmata pieaugušo izglītotājiem</strong> (IO3) – metodiskais materiāls programmas ieviešanai</li></ul></ul>
+        <ul><li><strong>Mācību metožu rīks</strong> (IO1) - pieejams internetā</li>
+        <li><strong>Senioru Balvas programma</strong> (IO2) - sistēma brīvprātīgo uzskaitei un apbalvošanai</li>
+        <li><strong>Rokasgrāmata pieaugušo izglītotājiem</strong> (IO3) - metodiskais materiāls programmas ieviešanai</li></ul></ul>
         <p>COVID-19 radīja izaicinājumus sanāksmju un pieredzes apmaiņas organizēšanā, tomēr, izmantojot pieejamās tehnoloģijas un ievērojot drošības pasākumus,
         mērķis tika sasniegts. Rezultātā izveidota <strong>Senioru Balvas programma</strong>,
         kas sistēmiski uzskaita brīvprātīgā darba stundas un piešķir apbalvojumus <strong>zelta,
@@ -87,7 +87,7 @@ export const projects = {
         <p class="card-text">Somijas kolēģi dalījās pieredzē,
         kā viņi organizē izglītības darbu un kā veido jaunas mācību apguves telpas,
         pielāgojoties esošajai situācijai un arī vēl nezināmiem izaicinājumiem. Noskaidrojām,
-        kāds ir Somijas izglītības veiksmes stāsts – katra izglītojamā mācību vajadzību audits un sekošana izaugsmei!</p></div></div>
+        kāds ir Somijas izglītības veiksmes stāsts - katra izglītojamā mācību vajadzību audits un sekošana izaugsmei!</p></div></div>
         <div class="card mb-3"><div class="card-body">
         <h5 class="card-title">🇬🇷 Grieķija (Korfu)</h5>
         <p class="card-text">Ļoti noderīgas ir Korfu iegūtās zināšanas par mākslas jomas sasaisti gan ar valodu apguvi,
@@ -122,7 +122,7 @@ export const projects = {
     },
     {
       id: "5",
-      title: "Erasmus+ KA1 projekts <i>Trešā paaudze – otrā iespēja</i>",
+      title: "Erasmus+ KA1 projekts <i>Trešā paaudze - otrā iespēja</i>",
       subtitle: "",
       date: "2014-08-01",
       projectNumber: "2014-1LV01-KA104-0000502015.g.",
@@ -168,8 +168,8 @@ export const projects = {
         to izzināšana paaugstina bērnu dzīves kvalitāti, paplašina redzesloku, vairo dzīvesprieku,
         ceļ pašnovērtējumu, pasargā no kļūmīgiem lēmumiem,
         veido izpratni par vērtībām un rada piederības sajūtu sabiedrībai.`,
-      description: `<p> Katrā no aktivitāšu dienām atkārtojās ebru – gleznošana uz ūdens, 
-        kurai bija papildus pieskaņotas ar šo mākslu saistītas citas radošās darbnīcas – svilpavnieku
+      description: `<p> Katrā no aktivitāšu dienām atkārtojās ebru - gleznošana uz ūdens, 
+        kurai bija papildus pieskaņotas ar šo mākslu saistītas citas radošās darbnīcas - svilpavnieku
         veidošana un marmorizēšana, kā arī papīra marmorizēšanas un origami meistarklases. </p>
         <p> Noslēguma dienu - 20.07. Bērni devās pastaigā ar pedagogu sagatavotu karti rokās,
         pēc kuras bija jāmeklē un jāatrod tuvējā apkaimē dabā izvietoti mākslas priekšmeti:
@@ -178,7 +178,7 @@ export const projects = {
         dalībnieki minēja mīklas par putniem. Ceļa mērķis bija Valdo administratīvā ēka.
         Tur, 1. stāva vestibilā bija izvietota pirmajās trīs nodarbību dienās radīto darbu izstāde. </p>
         <p> Tā notika ar lentas pārgriešanu un mākslinieces uzrunu.
-        Katrs jaunais mākslinieks – izstādes darbu autors,
+        Katrs jaunais mākslinieks - izstādes darbu autors,
         saņēma skaistu dāvanu no VALDO centra: VALDO 30 gadu jubilejas šokolādes kasti. </p>`,
       carouselId: "",
       carouselTextId: "",
@@ -195,7 +195,7 @@ export const projects = {
       projectTarget: `Sniegt iespēju pieaugušo izglītotājiem piedalīties starptautiskos apmācību kursos, 
         lai uzlabotu savas prasmes un iemaņas. Tā ir iespēja iegūt jaunas, inovatīvas kompetences darbam ar senioru auditoriju un dot stimulu dalībai turpmākajos Eiropas līmeņa projektos.`,
       description: `<p>Projektā tika apgūtas un uzlabotas 21. gadsimta 
-        prasmes – <strong>koučings</strong> un <strong>multisensorās izglītības metodes</strong>. </p>
+        prasmes - <strong>koučings</strong> un <strong>multisensorās izglītības metodes</strong>. </p>
         <p> <strong>Cervantes Training</strong> organizētajos
         kursos tika gūtas zināšanas par mācību priekšlaicīgas pārtraukšanas iemesliem Eiropas valstīs.
         Dalībnieki ieguva praktiskas iemaņas darbā ar <strong>Emocionālās Brīvības Tehniku (EBT)</strong>
@@ -203,12 +203,12 @@ export const projects = {
         kā motivēt jauniešus mācīties un nepamest izglītību. </p>
         <p> Kursu ietvaros tika gūtas vairākas vērtīgas atziņas:
         <ul> <li>Mēs nevaram kontrolēt citus; </li> <li>Mums jāmācās,
-        kā menedžēt mūsu atbildību un emocijas;</li> <li>Būt stipram un mierīgam – ne citu,
-        bet savās acīs;</li> <li>Jāatzīst savas kļūdas un jāmācās – visu mūžu jāmācās,
+        kā menedžēt mūsu atbildību un emocijas;</li> <li>Būt stipram un mierīgam - ne citu,
+        bet savās acīs;</li> <li>Jāatzīst savas kļūdas un jāmācās - visu mūžu jāmācās,
         jo kā mēs varam mācīt citus, ja paši nemācīsimies?</li> </ul> </p>
-        <p> Liela uzmanība tika pievērsta <strong>stresa menedžmentam</strong> –
+        <p> Liela uzmanība tika pievērsta <strong>stresa menedžmentam</strong> -
         kā stress un emocijas ietekmē fizisko un mentālo veselību.
-        Tika analizēts 'labais' stress un 'sliktais' – distress. </p>
+        Tika analizēts 'labais' stress un 'sliktais' - distress. </p>
         <p> Ārpus nodarbību laika bija iespēja aktualizēt savas zināšanas un pieredzi
         <strong>angļu un spāņu valodās</strong>, kā arī kultūras un subkultūras jautājumos. </p>
         <p> Kursa dalībnieki bija no <strong>Grieķijas, Rumānijas, Itālijas, Slovākijas, Lietuvas un Islandes</strong>,
@@ -238,15 +238,15 @@ export const projects = {
         <p> Projekta mērķis bija dot iespēju pieaugušo izglītības pasniedzējiem iegūt jaunas,
         inovatīvas kompetences darbā ar senioru auditoriju un sniegt viņiem stimulu piedalīties turpmākajos Eiropas projektos. </p>
         <p> Projekta ietvaros trīs biedrības <i><strong>Vecmāmiņas.lv</strong></i> izglītotāji
-        devās uz apmācību kursiem: </p> <ul> <li><strong>Itālijā (Romā)</strong> –
+        devās uz apmācību kursiem: </p> <ul> <li><strong>Itālijā (Romā)</strong> -
         par pamatkompetencēm un to nozīmīgumu iekļaušanas procesā,</li>
-        <li><strong>Horvātijā (Splitā)</strong> – par apmācībām ārpus telpām un kopīgu mācīšanos caur sadarbību,</li>
-        <li><strong>Čehijā (Prāgā)</strong> – par inovatīvām pieejām mūsdienu izglītībā.</li> </ul>
+        <li><strong>Horvātijā (Splitā)</strong> - par apmācībām ārpus telpām un kopīgu mācīšanos caur sadarbību,</li>
+        <li><strong>Čehijā (Prāgā)</strong> - par inovatīvām pieejām mūsdienu izglītībā.</li> </ul>
         <p> Projekta rezultātā dalībnieki ir uzlabojuši savu pašapziņu, angļu valodas zināšanas,
         kā arī ieguvuši starpkultūru komunikācijas prasmes un kompetences.
         Ieguvēji ir ne tikai pedagogi, kas piedalījās mobilitātēs, bet arī viņu kolēģi,
         jo tika rīkota informatīva sapulce, kurā dalībnieki dalījās pieredzē un turpmāk varēs praktiski ieviest jauniegūtās metodes. </p>
-        <p> <strong>Nordplus Adult projekts</strong> <i>Palīdzēsim kopā jūsu mīļajiem</i> –
+        <p> <strong>Nordplus Adult projekts</strong> <i>Palīdzēsim kopā jūsu mīļajiem</i> -
         T4 (E-mācību platforma neformālajiem demences pacientu aprūpētājiem).</p>`,
       carouselId: "",
       carouselTextId: "",
@@ -274,7 +274,7 @@ export const projects = {
         Katram vēlamajam mērķim projekta ietvaros izdevās atrast piemērotus kursus.</p>
         <p>Mūsu izglītotāji ir atgriezušies no apmācībām ar spēju palīdzēt audzēkņiem
         jau ar Eiropas mēroga skatījumu uz nākotnes attīstības procesiem.</p>
-        <p><strong>Islandē</strong> apguvām neparastu metodi senioru auditorijai –
+        <p><strong>Islandē</strong> apguvām neparastu metodi senioru auditorijai -
         STPM metodi. Bet mācīties ar spēļu elementiem var jebkurā vecumā!</p>
         <p><strong>Horvātijā, Splitā</strong> gūtās zināšanas palīdzēs pašiem pasniedzējiem neizdegt,
         mazināt stresu ikdienā un vadīt nodarbības mierīgā, līdzsvarotā manierē,
@@ -286,7 +286,7 @@ export const projects = {
       carouselId: "galleryCarouselFlexibli",
       carouselTextId: "carouselTextFlexibli",
       defaultCarouselText:
-        "Draudzības vakars Islandē bija iespaidīgs – kursu dalībnieki no 9 valstīm",
+        "Draudzības vakars Islandē bija iespaidīgs - kursu dalībnieki no 9 valstīm",
       gallery: [
         "flexibli1.jpg",
         "flexibli2.jpg",
@@ -326,11 +326,11 @@ export const projects = {
       timeframe: "2023",
       projectTarget: `Ar dažādu aktivitāšu palīdzību iepazīstināt Ukrainas civiliedzīvotājus ar Valmieras pilsētas daudzveidību, 
         sniegt māju sajūtu, iesaistīt tos kopējās aktivitātēs, sekmēt sadarbību un iejušanos pilsētā.`,
-      description: `<p>Starp savējiem – tā mēs vēlamies, lai justos ikviens Ukrainas iedzīvotājs, 
+      description: `<p>Starp savējiem - tā mēs vēlamies, lai justos ikviens Ukrainas iedzīvotājs, 
         jo īpaši seniori, dzīvojot Valmieras novadā!
         2023. gadā Valmieras novadā uzturējās aptuveni 250-300 Ukrainas civiliedzīvotāju,
         kas ir projekta primārā mērķauditorija kopā ar Valmieras pilsētas un novada iedzīvotājiem.</p>
-        <p>Projekta “Starp savējiem” aktivitātes norisinājās trīs mēnešus – oktobrī, novembrī, decembrī -
+        <p>Projekta “Starp savējiem” aktivitātes norisinājās trīs mēnešus - oktobrī, novembrī, decembrī -
         dažādās Valmieras vietās.</p> <p>Ukrainas civiliedzīvotāji ieguva informāciju par Latvijas un Valmieras vēsturi,
         demokrātiju, par pašvaldības darbu un līdzdalības formām,
         kā arī par latviešu valodu un labākajām valodas apguves metodēm.</p>
@@ -340,7 +340,7 @@ export const projects = {
         kā dzīvot un domāt zaļi, kā arī piedalījās radošajās darbnīcās.</p>
         <p>Radošuma dienā dalībnieki iemēģināja roku kaligrāfijā un rakstīja gan alfabētu,
         gan pastkartes.</p> <p>Kopīgais mācību brauciens uz Dzērbeni kā Demokrātijas mācību stunda.
-        Noslēguma pasākums – Brīvprātīgo diena un iespēja arī pie mums nokļuvušajiem ukraiņiem
+        Noslēguma pasākums - Brīvprātīgo diena un iespēja arī pie mums nokļuvušajiem ukraiņiem
         nākotnē kļūt par brīvprātīgo kādā no nevalstiskajām organizācijām un iesaistīties sabiedrības
         līdzdalībā. Jo - esam taču visi STARP SAVĒJIEM!</p>`,
       carouselId: "galleryCarouselInovation",
