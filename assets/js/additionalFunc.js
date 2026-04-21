@@ -27,3 +27,10 @@ export function toggleScrollButton() {
 
 // Pievienojam event listeneri, lai palaistu funkciju katru reizi, kad notiek skrollēšana
 window.addEventListener("scroll", toggleScrollButton);
+
+export function scrollToHash() {
+  if (window.location.hash) {
+    const target = document.querySelector(window.location.hash);
+    if (target) target.scrollIntoView({behavior: "smooth"});
+  }
+}
