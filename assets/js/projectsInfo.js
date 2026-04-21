@@ -39,11 +39,11 @@ export const projects = {
       defaultCarouselText:
         "'Teaching English to Elderly' (<i>TETE</i>) nodarbība",
       gallery: [
-        "TETE1.jpg",
-        "TETE2.jpg",
-        "TETE3.jpg",
-        "TETE4.jpg",
-        "TETE5.jpg",
+        "projects/TETE1.jpg",
+        "projects/TETE2.jpg",
+        "projects/TETE3.jpg",
+        "projects/TETE4.jpg",
+        "projects/TETE5.jpg",
       ],
     },
     {
@@ -101,7 +101,7 @@ export const projects = {
       carouselTextId: "carouselText",
       defaultCarouselText:
         "Divas mūsu biedrības seniores arī saņēma Sertifikātus (2.rindā no labās puses)",
-      gallery: ["sertifikatuSanemsana.jpg"],
+      gallery: ["projects/sertifikatuSanemsana.jpg"],
     },
     {
       id: "4",
@@ -288,10 +288,10 @@ export const projects = {
       defaultCarouselText:
         "Draudzības vakars Islandē bija iespaidīgs - kursu dalībnieki no 9 valstīm",
       gallery: [
-        "flexibli1.jpg",
-        "flexibli2.jpg",
-        "flexibli3.jpg",
-        "flexibli4.jpg",
+        "projects/flexibli1.jpg",
+        "projects/flexibli2.jpg",
+        "projects/flexibli3.jpg",
+        "projects/flexibli4.jpg",
       ],
     },
     {
@@ -347,11 +347,11 @@ export const projects = {
       carouselTextId: "carouselTextInovation",
       defaultCarouselText: "Ziedojums Ukrainai",
       gallery: [
-        "inovation1.jpg",
-        "inovation2.png",
-        "inovation3.png",
-        "inovation4.jpeg",
-        "inovation5.png",
+        "projects/inovation1.jpg",
+        "projects/inovation2.png",
+        "projects/inovation3.png",
+        "projects/inovation4.jpeg",
+        "projects/inovation5.png",
       ],
     },
     {

@@ -6,7 +6,7 @@
       "date": "2025-06-01",
       "projectNumber": "2025-1-LV01-KA121-ADU-000310262",
       "timeframe": "01/06/2025 - 31/08/2026",
-      "description": "<p>Projektā <i>PAKĀPIENI</i> ir plānota mobilitāte pasniedzējiem:</p><ul><li><b>Krētas Universitātes fakultātes Mūžizglītības, sākumskolas izglītības e-mācību departaments, GRIEĶIJĀ, KRĒTĀ</b> (22.09. - 26.09.2025)</li>Artificial Intelligence, Soft Skills & Creativity in the Classroom - mākslīgais intelekts, prasmes un radošums klasē<ul><li>3 pasniedzējas <a href='../articles/ka1-projekts-pakapieni.html#pakapieni'><button class='btn btn-info mx-5'>Uzzini kā mums gāja</button></a></li></ul><li><b>Madeira, Portugāle</b> (07.12. - 12.12.2025)</li>Education for Sustainable Living - Izglītība ilgtspējīgai dzīvei<ul><li>1 pasniedzēja <a href='../articles/ka1-projekts-pakapieni.html#madeira'><button class='btn btn-info mx-5'>Uzzini kā mums gāja</button></a></li></ul></ul>",
+      "description": "<p>Projektā <i>PAKĀPIENI</i> ir plānota mobilitāte pasniedzējiem:</p><ul><li><b>Krētas Universitātes fakultātes Mūžizglītības, sākumskolas izglītības e-mācību departaments, GRIEĶIJĀ, KRĒTĀ</b> (22.09. - 26.09.2025)</li>Artificial Intelligence, Soft Skills & Creativity in the Classroom - mākslīgais intelekts, prasmes un radošums klasē<ul><li>3 pasniedzējas <a href='../articles/projects/ka1-projekts-pakapieni.html#pakapieni'><button class='btn btn-info mx-5'>Uzzini kā mums gāja</button></a></li></ul><li><b>Madeira, Portugāle</b> (07.12. - 12.12.2025)</li>Education for Sustainable Living - Izglītība ilgtspējīgai dzīvei<ul><li>1 pasniedzēja <a href='../articles/projects/ka1-projekts-pakapieni.html#madeira'><button class='btn btn-info mx-5'>Uzzini kā mums gāja</button></a></li></ul></ul>",
       "gallery": []
     }
   ],
@@ -17,7 +17,7 @@
       "date": "2024-06-01",
       "projectNumber": "2024-1-LV01-KA121-ADU-000204150",
       "timeframe": "01/06/2024 - 31/08/2025",
-      "description": "<p>Saskaņā ar izvirzītajiem mērķiem, kas mums kā akreditētai biedrībai realizējami tuvākajos 4 gados, projektā <i>STABILITĀTE</i>  ir plānotas mobilitātes pasniedzējiem:</p> <ul><li><b>Mācību centrs <i>English Matters</i>  Īrijā, DUBLINĀ</b> (20.10. -26.10.2024)</li>Valodas mācību metodikas uzlabošana pieaugušajiem izglītojamajiem un pasniedzējiem, un kultūrizglītības elementu iekļaušana mācību programmās <ul><li>1 pasniedzēja <a href='../articles/erasmus-ka1-projekts-stabilitate.html#englishMatters'><button class='btn btn-info mx-5'>Uzzini kā mums gāja</button></a></li></ul><li><b>Mācību centrs <i>Dante</i> Horvātijā, RIJEKĀ</b> (17.03. -21.03.2025)</li>Inovatīva senioru izglītība, izmantojot labākās andragoģijas metodes<ul><li>3 pasniedzējas <a href='../articles/erasmus-ka1-projekts-stabilitate.html#dante'><button class='btn btn-info mx-5'>Uzzini kā mums gāja</button></a></li></ul><li><b>Mācību centrs <i>Mobility Friends</i> Portugālē, MADEIRĀ, FUNŠALĀ</b> (12.05. - 16.05.2025)</li>Labklājība un dzīves kvalitāte senioru vecumā - teorija un prakse<ul><li>2 pasniedzējas <a href='../articles/erasmus-ka1-projekts-stabilitate.html#mobilityFriends'><button class='btn btn-info mx-5'>Uzzini kā mums gāja</button></a></li></ul>",
+      "description": "<p>Saskaņā ar izvirzītajiem mērķiem, kas mums kā akreditētai biedrībai realizējami tuvākajos 4 gados, projektā <i>STABILITĀTE</i>  ir plānotas mobilitātes pasniedzējiem:</p> <ul><li><b>Mācību centrs <i>English Matters</i>  Īrijā, DUBLINĀ</b> (20.10. -26.10.2024)</li>Valodas mācību metodikas uzlabošana pieaugušajiem izglītojamajiem un pasniedzējiem, un kultūrizglītības elementu iekļaušana mācību programmās <ul><li>1 pasniedzēja <a href='../articles/projects/erasmus-ka1-projekts-stabilitate.html#englishMatters'><button class='btn btn-info mx-5'>Uzzini kā mums gāja</button></a></li></ul><li><b>Mācību centrs <i>Dante</i> Horvātijā, RIJEKĀ</b> (17.03. -21.03.2025)</li>Inovatīva senioru izglītība, izmantojot labākās andragoģijas metodes<ul><li>3 pasniedzējas <a href='../articles/projects/erasmus-ka1-projekts-stabilitate.html#dante'><button class='btn btn-info mx-5'>Uzzini kā mums gāja</button></a></li></ul><li><b>Mācību centrs <i>Mobility Friends</i> Portugālē, MADEIRĀ, FUNŠALĀ</b> (12.05. - 16.05.2025)</li>Labklājība un dzīves kvalitāte senioru vecumā - teorija un prakse<ul><li>2 pasniedzējas <a href='../articles/projects/erasmus-ka1-projekts-stabilitate.html#mobilityFriends'><button class='btn btn-info mx-5'>Uzzini kā mums gāja</button></a></li></ul>",
       "gallery": []
     },
     {
@@ -33,11 +33,11 @@
       "carouselTextId": "carouselTextTETE",
       "defaultCarouselText": "'Teaching English to Elderly' (<i>TETE</i>) nodarbība",
       "gallery": [
-        "TETE1.jpg",
-        "TETE2.jpg",
-        "TETE3.jpg",
-        "TETE4.jpg",
-        "TETE5.jpg"
+        "projects/TETE1.jpg",
+        "projects/TETE2.jpg",
+        "projects/TETE3.jpg",
+        "projects/TETE4.jpg",
+        "projects/TETE5.jpg"
       ],
       "documentUrl": "../assets/documents/teachingEnglishToAdults.pdf",
       "documentUrl2": "../assets/documents/kalendars.pdf"
@@ -62,7 +62,7 @@
       "carouselId": "galleryCarousel",
       "carouselTextId": "carouselText",
       "defaultCarouselText": "Divas mūsu biedrības seniores arī saņēma Sertifikātus (2.rindā no labās puses)",
-      "gallery": ["sertifikatuSanemsana.jpg"]
+      "gallery": ["projects/sertifikatuSanemsana.jpg"]
     },
     {
       "id": "4",
@@ -155,10 +155,10 @@
       "carouselTextId": "carouselTextFlexibli",
       "defaultCarouselText": "Draudzības vakars Islandē bija iespaidīgs - kursu dalībnieki no 9 valstīm",
       "gallery": [
-        "flexibli1.jpg",
-        "flexibli2.jpg",
-        "flexibli3.jpg",
-        "flexibli4.jpg"
+        "projects/flexibli1.jpg",
+        "projects/flexibli2.jpg",
+        "projects/flexibli3.jpg",
+        "projects/flexibli4.jpg"
       ]
     },
     {
@@ -188,11 +188,11 @@
       "carouselTextId": "carouselTextInovation",
       "defaultCarouselText": "Ziedojums Ukrainai",
       "gallery": [
-        "inovation1.jpg",
-        "inovation2.png",
-        "inovation3.png",
-        "inovation4.jpeg",
-        "inovation5.png"
+        "projects/inovation1.jpg",
+        "projects/inovation2.png",
+        "projects/inovation3.png",
+        "projects/inovation4.jpeg",
+        "projects/inovation5.png"
       ]
     }
   ]
