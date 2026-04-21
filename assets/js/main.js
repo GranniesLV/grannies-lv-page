@@ -9,6 +9,7 @@ import {scrollToTop, toggleScrollButton} from "./additionalFunc.js";
 const popup_news = [
   // ← JAUNU ZIŅU PIEVIENO ŠEIT (augšā)
 
+  "2026-04-25_riga_miera-kvartala-darbnca.html",
   "2026-03-18_riga_lka-lekcijas-senioriem.html",
   "2025-10-01_riga_erasmus-balva.html",
   "apskati-jaunakos-notikumus.html",
