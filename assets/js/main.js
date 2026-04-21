@@ -425,6 +425,85 @@ function initCalendar() {
 }
 
 // ============================================================
+//  AKTUALITĀTES — saraksti
+//  Jaunākais — AUGŠĀ. Vecākais — APAKŠĀ.
+// ============================================================
+
+const topicalityNews = [
+  // ← JAUNU RAKSTU PIEVIENO ŠEIT (augšā)
+  "2026-04-25_riga_miera-kvartala-darbnca.html",
+  "2026-03-30_riga_kristiga-fakultate.html",
+  "2026-03-26_riga_kulturas-rondo.html",
+  "2026-03-25_riga_rsu-veselibas-lekcija.html",
+  "2026-03-13_riga_valsts-prezidents.html",
+  "2026-03-18_riga_lka-kulturas-lekciju-cikls.html",
+  "2026-02-25_riga_kulturas-studijas.html",
+  "2026-01-21_riga_mes-un-kino.html",
+  "2026-01-14_riga_kino-lekcija-aicinajums.html",
+  "2026-01-22_riga_uzzini-ko-nezini.html",
+];
+
+const topicalityEvents = [
+  // ← JAUNU NOTIKUMU PIEVIENO ŠEIT (augšā)
+  "2026-02-27_riga_kristiga-fakultate-afisa.html",
+  "2026-02-25_riga_grafiti-ielu-maksla.html",
+  "2025-09-15_riga_eiropas-inovativas-balva.html",
+  "2025-09-15_riga_eiropas-balva-video.html",
+  "2026-02-04_riga_atkal-uz-kino.html",
+  "2025-10-22_riga_otra-tiksanas.html",
+  "2025-10-01_riga_lka-tpu-atklasana.html",
+  "2025-06-27_riga_sadarbibas-ligums.html",
+  "2025-12-11_riga_erasmus-noslegums-viaa.html",
+  "2025-12-10_brisele_erasmus-balva.html",
+  "2025-12-10_riga_tpu-semestra-noslegums.html",
+  "2025-09-17_kuldiga_senioru-festivals.html",
+  "2025-06-11_riga_udens-gleznu-darbnicas.html",
+  "2025-03-15_riga_gada-parskats-2024.html",
+  "2024_riga_macamies-anglu-valodu.html",
+  "2024_riga_pilnveidojam-majas-lapu.html",
+];
+
+const topicalityUniversity = [
+  // ← JAUNU TPU RAKSTU PIEVIENO ŠEIT (augšā)
+  "2026-02-04_riga_kino-muzejs-ekskursija.html",
+  "2025-12-19_riga_santa-raksts.html",
+];
+
+// ============================================================
+//  AKTUALITĀTES — ielādētājs
+// ============================================================
+
+async function loadTopicality() {
+  const isTopicality = window.location.pathname.includes("topicality");
+  if (!isTopicality) return;
+
+  const sections = [
+    { list: topicalityNews,       containerId: "topicality-news-container",       folder: "news"       },
+    { list: topicalityEvents,     containerId: "topicality-events-container",     folder: "events"     },
+    { list: topicalityUniversity, containerId: "topicality-university-container", folder: "university" },
+  ];
+
+  for (const section of sections) {
+    const container = document.getElementById(section.containerId);
+    if (!container || section.list.length === 0) continue;
+
+    for (const fails of section.list) {
+      try {
+        const response = await fetch(`/articles/topicality/${section.folder}/${fails}`);
+        if (!response.ok) throw new Error(`Neizdevās ielādēt: ${fails}`);
+        const html = await response.text();
+        container.insertAdjacentHTML("beforeend", html);
+      } catch (error) {
+        console.error("Aktualitāšu ielādes kļūda:", error);
+      }
+    }
+  }
+
+  // Pēc ielādes — scroll uz hash ja ir
+  scrollToHash();
+}
+
+// ============================================================
 //  HASH SCROLL PALĪGS
 // ============================================================
 
@@ -458,9 +537,6 @@ document.addEventListener("DOMContentLoaded", async function () {
   initFormValidation();
   setupFormSubmit();
 
-  // Lasīt vairāk
-  setupReadMore();
-
   // Hash scroll
   scrollToHash();
 
@@ -480,6 +556,12 @@ document.addEventListener("DOMContentLoaded", async function () {
       myModal.show();
     }
   }
+
+  // Aktualitāšu lapa
+  await loadTopicality();
+
+  // Lasīt vairāk (pēc dinamiskā satura ielādes)
+  setupReadMore();
 });
 
 window.addEventListener("scroll", toggleScrollButton);
