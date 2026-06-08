@@ -12,7 +12,8 @@ const popup_news = [
   // ← JAUNU ZIŅU PIEVIENO ŠEIT (augšā)
 
   "2026-05-06_riga_statuti-atjaunoti.html",
-  "2026-04-25_riga_miera-kvartala-darbnca.html",
+  "2026-05-27_riga_lka-filmsanas-meistarklase.html",
+  "2026-04-25_riga_miera-kvartala-ideju-darbnica.html",
   "2026-03-18_riga_lka-lekcijas-senioriem.html",
   "2025-10-01_riga_erasmus-balva.html",
   "apskati-jaunakos-notikumus.html",

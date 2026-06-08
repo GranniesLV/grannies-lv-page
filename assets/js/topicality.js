@@ -8,7 +8,8 @@ import {scrollToHash} from "./additionalFunc.js";
 const topicalityNews = [
   // ← JAUNU RAKSTU PIEVIENO ŠEIT (augšā)
   "2026-05-23_viesite_15-dzimsanas-diena.html",
-  "2026-04-25_riga_miera-kvartala-darbnca.html",
+  "2026-05-27_riga_lka-filmsanas-meistarklase.html",
+  "2026-04-25_riga_miera-kvartala-ideju-darbnica.html",
   /* "2026-03-30_riga_kristiga-fakultate.html", */
   "2026-03-26_riga_kulturas-rondo.html",
   "2026-03-20_riga_2025-gada-parskata-sapulce.html",
