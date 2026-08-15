@@ -109,6 +109,19 @@ Veidne `pages/templateForNewPages.html` satur šo struktūru ar placeholder kome
 
 ---
 
+## Jaunu attēlu pievienošana
+- Iemest oriģinālos failus mapē `assets/images/_jaunas/` (nosaukums/formāts nav svarīgi) un sarunā pateikt, kam katrs paredzēts
+- Tālāk process: pārsaukt pēc mērķa mapes konvencijas → saspiest/pielāgot izmēru → pārvietot pareizajā `assets/images/...` apakšmapē → atjaunināt atsauces (HTML/JS/JSON) → iztīrīt `_jaunas/`
+
+### Attēlu saspiešana (mērķis: katrs attēls ≤ ~300KB)
+Uz šī macOS pieejams tikai **`sips`** (iebūvēts rīks) - nav `imagemagick`/`pngquant`/`cwebp`.
+- **Foto un grafikas bez reālas caurspīdības** (arī PNG bez jēgpilna alfa kanāla) → konvertēt uz **JPEG**, kvalitāte parasti 78-85 (pazemināt pakāpeniski, ja vēl par lielu)
+- **Logo/ikonas ar reālu caurspīdību** → paturēt PNG, samazināt tikai izmēru
+- Maks. mala: ~1600px pilnizmēra/baneru attēliem, ~1400px kalendāra/sīktēlu attēliem - **vispirms pārbaudīt esošo `pixelWidth`/`pixelHeight`** (`sips -g pixelWidth -g pixelHeight fails`), jo `sips -Z` **augšupmērogo** mazākus attēlus, ja vērtība netiek pārbaudīta pirms tam
+- Ja formāts mainās (`.png` → `.jpg`), **obligāti** jāatjaunina visas atsauces (`grep -rl "vecaisNosaukums.png"` pa `*.html`/`*.js`/`*.json`) - citādi bilde pazūd
+
+---
+
 ## Kalendāra sistēma
 
 - Fails: `assets/js/calendarData.js`
@@ -160,3 +173,38 @@ Jaunas navigācijas saites/pogas uz šīm sekcijām jāsakrīt ar `components/he
 ## Citi projekta faili
 - `RAKSTU_PIEVIENOŠANA.md` - īsa norāde, kas atsūta uz šo failu (lai process būtu aprakstīts tikai vienā vietā)
 - `README.md` - tukšs/neizmantots
+
+---
+
+## Uzlabojumu saraksts (TODO)
+Apkopots no koda/UX pārskata (2026-08). ✅ = izdarīts, atzīmēt un pārcelt uz "izdarīts", kad kāds punkts pabeigts.
+
+### ✅ Izdarīts
+- `lang="lv"` visās lapās (bija `en`), unikāls `<title>`/`meta description` katrai lapai, Open Graph tagi
+- Noņemts dubultais CDN Bootstrap CSS (paturēts tikai lokālais `bootstrap.css`)
+- Izdzēsts neizmantotais `assets/js/projectsInfo.js`
+- Visas attēlu bildes, kas bija virs ~300KB, saspiestas/konvertētas (skat. "Jaunu attēlu pievienošana")
+- Izveidota `assets/images/_jaunas/` darbplūsma jaunu attēlu apstrādei
+
+### 🔲 Vēl nav izdarīts
+
+**Ātri labojami:**
+- `robots.txt` un `sitemap.xml` trūkst - apgrūtina meklētājprogrammu indeksāciju
+- 4 jau iepriekš eksistējošas salauztas attēlu atsauces:
+  - `assets/images/icons.ico/apple-icon-180x180.png` (`pages/form1.html`) - mape/fails neeksistē
+  - `assets/images/logos/Riga-ENG-Logo-black.png` un `.../topicality/events/Riga-ENG-Logo-black.png` - reālais fails ir `Riga-ENG-Logo-black.png.webp` (dubultais paplašinājums)
+  - `assets/images/titles/calendarApril2025.png` - fails vispār neeksistē
+
+**UX puse:**
+- Sākumlapas modālais popup atveras katru reizi, kad atver `index.html` - apsvērt rādīt tikai reizi sesijā/dienā (līdzīgi kā kontaktu popup ar `sessionStorage`)
+- `popup_news` saraksts (`main.js`) aug bezgalīgi, vecās "pastāvīgās" ziņas nekad neizzūd - apsvērt ierobežot rādāmo skaitu
+- Nav meklēšanas/filtrēšanas Aktualitāšu rakstos (30+ raksti vienā ritināmā lapā)
+- Baneru attēli hotlinkoti no ārējiem avotiem (pexels.com, picflow.media) - risks, ja tie pazūd/mainās
+
+**Koda puse:**
+- `loadTopicality()`/`loadNews()` (`topicality.js`/`main.js`) ielādē rakstus **secīgi** (`await` cilpā), nevis paralēli (`Promise.all`) - ar 30+ rakstiem tas ir lēnāk, nekā vajadzētu
+- Nav `loading="lazy"` nevienam attēlam
+- jQuery ielādēts katrā lapā, bet reāli izmantots tikai vienā vietā (`projects.js` karuseļa paraksti) - varētu aizstāt ar vanilla JS un izmest atkarību
+- Karuseļa slaidu paraksti (`captionsForTETE` u.c.) hardkodēti `projects.js`, nevis `projects.json` - viegli aizmirstams, pievienojot jaunu projektu ar galeriju
+- HTML/CSS klases (piem. `btn btn-info`) iekļautas tieši `projects.json` teksta laukos - sasaista datus ar konkrētu Bootstrap versiju
+- Nav automatizētas pārbaudes, vai `topicality.js`/`main.js`/`projects.json` minētie faili tiešām eksistē mapēs (palīdzētu pret "aizmirsu pievienot failu" kļūdām)
