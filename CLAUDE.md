@@ -45,6 +45,42 @@ Raksti glabājas `articles/topicality/` trīs apakšmapēs, un tiek reģistrēti
      `label: null`, ja rakstam nav vajadzīga sava poga notikumu navigācijā (poga tiek ģenerēta automātiski no šī saraksta - **nav** jāpieskata `pages/topicality.html` manuāli)
 3. Ielāde notiek tikai lapā `pages/topicality.html` (funkcija `loadTopicality()` pārbauda `window.location.pathname.includes("topicality")`)
 
+### Stils: Jaunumi vs Notikumi
+Šīm divām sadaļām **apzināti atšķirīgs** raksta stils - lai vizuāli nošķirtos:
+
+| | Jaunumi | Notikumi |
+|---|---|---|
+| Raksturs | īss, FB-tipa paziņojums | strukturēta "kas notika" atskaite |
+| Veidne | `<section class="container my-5"><article class="card border-0 shadow-sm rounded-4">` ar badge+`h1`+lead | `<h5 id="...">` virsraksts + `<div class="row g-4">` divkolonnu: kreisā - teksta `card`, labā - "Pasākuma mirkļi" foto `card` |
+| Papildu bloks | - | bieži "Praktiska informācija" (vieta/organizators/nākamā reize) - **piespiesta pie kreisās teksta kartītes apakšas** ar `card-body d-flex flex-column` + `<div class="mt-auto">` ap `<hr>`+infobloku (vienmēr pie apakšas, arī ja labā kolonna garāka), NEVIS atsevišķa kartīte zem abām kolonnām (jūtas nesaistīta) un NEVIS `row`/`col-md-8` (atstāj tukšumu labajā pusē) |
+| Piemērs | `articles/topicality/news/2026-05-23_viesite_15-dzimsanas-diena.html` | `articles/topicality/events/2026-08-12_riga_datorprasmju-nodarbiba.html` (arī "Praktiska informācija" kartītes paraugs) |
+
+Notikumu raksti nav ietverti `<section>`/`container` - tie paļaujas uz vecāka `#topicality-events-container` konteksu (skat. piemērus) un beidzas ar `<hr>`.
+
+### Notikumu pogas (5 jaunākās + meklēšana)
+Kopš 18+ notikumiem pogu josla kļuva nepārskatāma, ieviesta:
+- Rāda tikai **5 jaunākās** pogas (`visibleBtnCount` sadaļā `topicality.js`) - pārējās paslēptas Bootstrap `collapse` blokā (`#topicality-events-btns-more-container`), atveras ar pogu "Rādīt visus notikumus (+N)"
+- Katrai pogai automātiski pievienots **datums** (no faila nosaukuma prefiksa `GGGG-MM-DD`), formātā `DD.MM.`
+- Meklēšanas lauks (`#events-search-input`) filtrē pogas pēc teksta/datuma "on input"; ja atbilstība atrodas paslēptajā blokā, tas automātiski atveras
+- Meklēšana ir **diakritikas-nejūtīga** (`normalizeSearchText()` funkcija `topicality.js` -noņem garumzīmes/mīkstinājuma zīmes ar Unicode NFD normalizāciju, lai varētu meklēt arī bez tām)
+- Zem lauka rādās arī **"as-you-type" ieteikumi** (`#events-search-suggestions`) ar pilnu raksta virsrakstu (nolasīts tieši no ielādētā raksta HTML, nevis no pogas `label`) - tāpēc atrodami arī notikumi, kam **nav pogas** (`label: null`). Uzklikšķinot uz ieteikuma, lapa automātiski atver paslēpto pogu bloku (ja vajag) un aizritina pie attiecīgā raksta
+- Jauna notikuma pievienošana šo sistēmu neietekmē - viss strādā automātiski no `topicalityEvents` masīva kārtības un raksta HTML satura (virsraksta meklēšanai der jebkurš `h1`-`h6` elements ar/iekš ieraksta `id`)
+
+---
+
+## Globālā meklēšana (visa vietne)
+Fails: **`assets/js/search.js`**, izsaukts no `main.js` (`initGlobalSearch()`) uzreiz pēc galvenes ielādes - pieejama **katrā lapā**, jo galvene (`components/header.html`) ielādējas visur.
+
+- **Poga**: 🔍 ikona galvenes stūrī (`#mainLOGO`), atver modālo logu `#globalSearchModal` (arī definēts `header.html`)
+- **Meklēšanas indekss** tiek uzbūvēts **lēni** (tikai pirmajā modāļa atvēršanas reizē) un pēc tam kešots atmiņā visai lapas apskates sesijai:
+  - **Aktualitātes** - atkārtoti izmanto tos pašus `topicalityNews`/`topicalityEvents`/`topicalityUniversity` masīvus no `topicality.js` (eksportēti no turienes, NAV dublēti) - katram failam tiek nofetčots HTML un no tā izvilkts virsraksts (`h1-h6`) un pirmā rindkopa kā fragments
+  - **Projekti** - `assets/JSON/projects.json`, saite uz `/pages/projects.html#collapse<id>`
+  - **Lapas** - neliels statisks saraksts `search.js` (`STATIC_PAGES`) - jāpapildina ar roku, ja parādās jauna galvenā lapa/sekcija
+- Meklēšana ir diakritikas-nejūtīga (tā pati `normalizeSearchText()` no `additionalFunc.js`)
+- Uzklikšķinot uz **projekta** rezultāta, `pages/projects.html` (`projects.js`) pēc ielādes pārbauda URL hash (`#collapse<id>`) un automātiski atver + aizrit līdz tam projektam akordeonā
+
+**Ja pievieno jaunu galveno lapu/sekciju** - jāpapildina `STATIC_PAGES` saraksts `search.js`, citādi tā nebūs atrodama meklējot.
+
 ---
 
 ## Popup logs sākumlapā (`index.html`)
@@ -88,8 +124,9 @@ Bez šī soļa karuselis strādās (attēli mainīsies), bet paraksts zem tā - 
 
 | Saturs | Mape |
 |---|---|
-| Aktualitāšu rakstu attēli | `assets/images/topicality/news/` un `.../events/` |
+| Aktualitāšu rakstu attēli | `assets/images/topicality/news/`, `.../events/`, `.../university/` |
 | Projektu attēli (galerijas) | `assets/images/projects/` |
+| "Atmiņas" lapas attēli | `assets/images/memories/` |
 | Kalendāra mēnešu attēli | `assets/images/calendar/` |
 | "Par mums" attēli (biedri, akreditācija) | `assets/images/about-us/` |
 | Logo (sadarbības partneri, fondi) | `assets/images/logos/` |
@@ -119,6 +156,7 @@ Uz šī macOS pieejams tikai **`sips`** (iebūvēts rīks) - nav `imagemagick`/`
 - **Logo/ikonas ar reālu caurspīdību** → paturēt PNG, samazināt tikai izmēru
 - Maks. mala: ~1600px pilnizmēra/baneru attēliem, ~1400px kalendāra/sīktēlu attēliem - **vispirms pārbaudīt esošo `pixelWidth`/`pixelHeight`** (`sips -g pixelWidth -g pixelHeight fails`), jo `sips -Z` **augšupmērogo** mazākus attēlus, ja vērtība netiek pārbaudīta pirms tam
 - Ja formāts mainās (`.png` → `.jpg`), **obligāti** jāatjaunina visas atsauces (`grep -rl "vecaisNosaukums.png"` pa `*.html`/`*.js`/`*.json`) - citādi bilde pazūd
+- ⚠️ **Drošības solis pirms `rm` uz oriģinālu**: ja mērķa mape (`--out ceļš/uz/mapi/fails.jpg`) vēl neeksistē, `sips` to **klusi neveido** un uzraksta failu nepareizā vietā (bez kļūdas!) - vienmēr vispirms `mkdir -p` mērķa mapei, un pēc `sips` izsaukuma **pārbaudīt, ka izejas fails tiešām eksistē pareizajā ceļā un ir >0 baiti**, tikai tad dzēst oriģinālu. Citādi risks pazaudēt lietotāja iesūtīto oriģinālo bildi neatgriezeniski.
 
 ---
 
@@ -165,8 +203,8 @@ Jaunas navigācijas saites/pogas uz šīm sekcijām jāsakrīt ar `components/he
 | Nosaukums | Laiks | id |
 |---|---|---|
 | Soli pa solim darbībā | 20/05/2026 - 12/11/2026 | 15 |
-| Kultūrizglītība Brasas apkaimes senioriem | 18/03/2026 - 10/06/2026 | 14 |
-| KA1 projekts Pakāpieni | 01/06/2025 - 31/08/2026 | 13 |
+
+Pārējie (Kultūrizglītība Brasas apkaimes senioriem - id 14, KA1 projekts Pakāpieni - id 13) pārcelti uz "Realizētie", nākamais brīvais id joprojām **16**.
 
 ---
 
@@ -185,6 +223,10 @@ Apkopots no koda/UX pārskata (2026-08). ✅ = izdarīts, atzīmēt un pārcelt 
 - Izdzēsts neizmantotais `assets/js/projectsInfo.js`
 - Visas attēlu bildes, kas bija virs ~300KB, saspiestas/konvertētas (skat. "Jaunu attēlu pievienošana")
 - Izveidota `assets/images/_jaunas/` darbplūsma jaunu attēlu apstrādei
+- Notikumu pogas: 5 jaunākās + "Rādīt visus" + meklēšana ar ieteikumiem (skat. "Notikumu pogas")
+- Globālā meklēšana pa visu vietni (skat. "Globālā meklēšana")
+- ⚠️ **Kritisks labojums**: `components/header.html` navigācijai trūka `.navbar-toggler` pogas - zem `lg` ekrāna platuma (<992px, t.i. **visi telefoni**) visa navigācija (arī Galerija, Privātuma politika) bija pilnībā nepieejama, jo nebija veida, kā atvērt `.navbar-collapse`. Tagad pievienota poga + `.collapse` klase.
+- `pages/memories.html` attēli bija hotlinkoti no `picflow.media` (pagaidu/priekšskatījuma rīks) - lejupielādēti un pārvietoti uz `assets/images/memories/`, pievienota arī 15. dzimšanas dienas sadaļa
 
 ### 🔲 Vēl nav izdarīts
 
@@ -194,12 +236,11 @@ Apkopots no koda/UX pārskata (2026-08). ✅ = izdarīts, atzīmēt un pārcelt 
   - `assets/images/icons.ico/apple-icon-180x180.png` (`pages/form1.html`) - mape/fails neeksistē
   - `assets/images/logos/Riga-ENG-Logo-black.png` un `.../topicality/events/Riga-ENG-Logo-black.png` - reālais fails ir `Riga-ENG-Logo-black.png.webp` (dubultais paplašinājums)
   - `assets/images/titles/calendarApril2025.png` - fails vispār neeksistē
+- Citur vietnē (`index.html`, `pages/topicality.html`, `pages/about-us.html`, `pages/involved.html` u.c.) joprojām ir hotlinkoti baneru attēli no pexels.com/picflow.media - tas pats risks, kas piepildījās `memories.html` - vērts pārskatīt un lokalizēt arī tos
 
 **UX puse:**
 - Sākumlapas modālais popup atveras katru reizi, kad atver `index.html` - apsvērt rādīt tikai reizi sesijā/dienā (līdzīgi kā kontaktu popup ar `sessionStorage`)
 - `popup_news` saraksts (`main.js`) aug bezgalīgi, vecās "pastāvīgās" ziņas nekad neizzūd - apsvērt ierobežot rādāmo skaitu
-- Nav meklēšanas/filtrēšanas Aktualitāšu rakstos (30+ raksti vienā ritināmā lapā)
-- Baneru attēli hotlinkoti no ārējiem avotiem (pexels.com, picflow.media) - risks, ja tie pazūd/mainās
 
 **Koda puse:**
 - `loadTopicality()`/`loadNews()` (`topicality.js`/`main.js`) ielādē rakstus **secīgi** (`await` cilpā), nevis paralēli (`Promise.all`) - ar 30+ rakstiem tas ir lēnāk, nekā vajadzētu

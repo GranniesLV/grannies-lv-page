@@ -34,3 +34,13 @@ export function scrollToHash() {
     if (target) target.scrollIntoView({behavior: "smooth"});
   }
 }
+
+// Meklēšanas palīgfunkcija -noņem diakritiskās zīmes (ā->a, š->s, ...),
+// lai varētu meklēt arī bez garumzīmēm/mīkstinājuma zīmēm. Koplietota
+// visās vietnes meklēšanas funkcijās (notikumu pogas, globālā meklēšana).
+export function normalizeSearchText(str) {
+  return str
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}

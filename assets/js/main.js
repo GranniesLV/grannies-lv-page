@@ -2,6 +2,7 @@ import {initFormValidation} from "./formValidation.js";
 import {scrollToTop, toggleScrollButton, scrollToHash} from "./additionalFunc.js";
 import {loadTopicality} from "./topicality.js";
 import {initCalendar} from "./calendarData.js";
+import {initGlobalSearch} from "./search.js";
 
 // ============================================================
 //  ZIŅU SARAKSTS -šeit pievieno jaunas ziņas
@@ -11,6 +12,8 @@ import {initCalendar} from "./calendarData.js";
 const popup_news = [
   // ← JAUNU ZIŅU PIEVIENO ŠEIT (augšā)
 
+  "2026-08-15_riga_jaunais-macibu-gads.html",
+  "2026-08-12_riga_datorprasmju-nodarbiba.html",
   "2026-05-06_riga_statuti-atjaunoti.html",
   "2026-05-27_riga_lka-filmsanas-meistarklase.html",
   "2026-04-25_riga_miera-kvartala-ideju-darbnica.html",
@@ -311,6 +314,9 @@ document.addEventListener("DOMContentLoaded", async function () {
   await loadComponent("footer", "footer.html");
   await loadComponent("contact-pop-up", "contact-pop-up.html");
   await loadComponent("scroll-to-top", "scroll-to-top.html");
+
+  // Globālā meklēšana (pieejama katrā lapā, jo galvene ielādēta visur)
+  initGlobalSearch();
 
   // Scroll to top poga
   const scrollBtn = document.getElementById("scroll-to-top");

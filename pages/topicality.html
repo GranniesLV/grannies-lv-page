@@ -72,8 +72,28 @@
     <!--^ Notikumi -->
     <div id="events" class="text-center mb-5">
       <h1>Notikumi</h1>
-      <!--~ Notikumu pogas -ģenerē main.js no topicalityEvents masīva -->
-      <div id="topicality-events-btns-container" class="event-btns mb-5"></div>
+
+      <!--~ Notikumu meklēšana -->
+      <div class="mx-auto mb-3 position-relative" style="max-width: 420px;">
+        <input type="search" id="events-search-input" class="form-control rounded-pill" autocomplete="off"
+          placeholder="🔍 Meklēt notikumu (nosaukums vai datums)...">
+        <div id="events-search-suggestions" class="list-group position-absolute w-100 shadow-sm text-start"
+          style="z-index: 10; display: none;"></div>
+      </div>
+
+      <!--~ Notikumu pogas (5 jaunākās) -ģenerē topicality.js no topicalityEvents masīva -->
+      <div id="topicality-events-btns-container" class="event-btns mb-2"></div>
+
+      <!--~ Pārējās notikumu pogas -paslēptas, kamēr neatver/nemeklē -->
+      <div id="topicality-events-btns-more-container" class="event-btns collapse mb-3"></div>
+
+      <button class="btn btn-outline-secondary btn-sm rounded-pill mb-5" type="button"
+        data-bs-toggle="collapse" data-bs-target="#topicality-events-btns-more-container"
+        aria-expanded="false" aria-controls="topicality-events-btns-more-container"
+        id="topicality-events-toggle-btn">
+        Rādīt visus notikumus
+      </button>
+
       <div id="topicality-events-container"></div>
     </div>
     <hr>

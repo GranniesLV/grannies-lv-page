@@ -1,12 +1,13 @@
-import {scrollToHash} from "./additionalFunc.js";
+import {scrollToHash, normalizeSearchText} from "./additionalFunc.js";
 
 // ============================================================
 //  AKTUALITĀTES -saraksti
 //  Jaunākais -AUGŠĀ. Vecākais -APAKŠĀ.
 // ============================================================
 
-const topicalityNews = [
+export const topicalityNews = [
   // ← JAUNU RAKSTU PIEVIENO ŠEIT (augšā)
+  "2026-08-15_riga_jaunais-macibu-gads.html",
   "2026-05-23_viesite_15-dzimsanas-diena.html",
   "2026-05-27_riga_lka-filmsanas-meistarklase.html",
   "2026-04-25_riga_miera-kvartala-ideju-darbnica.html",
@@ -21,9 +22,14 @@ const topicalityNews = [
   "2026-01-22_riga_uzzini-ko-nezini.html",
 ];
 
-const topicalityEvents = [
+export const topicalityEvents = [
   // ← JAUNU NOTIKUMU PIEVIENO ŠEIT (augšā)
   // Katram ierakstam: file = faila nosaukums, id = HTML elementa id, label = pogas teksts (null = bez pogas)
+  {
+    file: "2026-08-12_riga_datorprasmju-nodarbiba.html",
+    id: "soliPaSolimDatorprasmesNodarbiba",
+    label: "Pirmā nodarbība: datorprasmes",
+  },
   {
     file: "2026-03-30_riga_kristiga-fakultate.html",
     id: "kristigaFakultateLekcija",
@@ -113,9 +119,11 @@ const topicalityEvents = [
   /* { file: "2024_riga_pilnveidojam-majas-lapu.html",     id: "improvingTheNewWebsite",               label: "Pilnveidojam jauno mājas lapu" }, */
 ];
 
-const topicalityUniversity = [
+export const topicalityUniversity = [
   // ← JAUNU TPU RAKSTU PIEVIENO ŠEIT (augšā)
   "kas-ir-tpu.html",
+  "2026-08-15_riga_makslas-akademijas-jumts.html",
+  "2026-06-10_riga_tpu-izlaidums.html",
   "2026-02-04_riga_kino-muzejs-ekskursija.html",
   "2025-12-19_riga_santa-raksts.html",
 ];
@@ -139,6 +147,11 @@ export async function loadTopicality() {
       containerId: "topicality-events-container",
       folder: "events",
       btnsId: "topicality-events-btns-container",
+      moreBtnsId: "topicality-events-btns-more-container",
+      toggleBtnId: "topicality-events-toggle-btn",
+      searchInputId: "events-search-input",
+      suggestionsId: "events-search-suggestions",
+      visibleBtnCount: 5,
     },
     {
       list: topicalityUniversity,
@@ -151,19 +164,90 @@ export async function loadTopicality() {
     const container = document.getElementById(section.containerId);
     if (!container || section.list.length === 0) continue;
 
+    let btnsContainer = null;
+    let moreContainer = null;
+
     if (section.btnsId) {
-      const btnsContainer = document.getElementById(section.btnsId);
+      btnsContainer = document.getElementById(section.btnsId);
+      moreContainer = section.moreBtnsId
+        ? document.getElementById(section.moreBtnsId)
+        : null;
+      const toggleBtn = section.toggleBtnId
+        ? document.getElementById(section.toggleBtnId)
+        : null;
+
       if (btnsContainer) {
-        section.list.forEach((entry) => {
-          if (typeof entry === "object" && entry.label) {
-            const a = document.createElement("a");
-            a.href = `#${entry.id}`;
-            a.className = "btn btn-info rounded-pill px-3 m-2";
-            a.setAttribute("role", "button");
-            a.textContent = entry.label;
-            btnsContainer.appendChild(a);
-          }
+        const labeled = section.list.filter(
+          (entry) => typeof entry === "object" && entry.label,
+        );
+        const visibleCount = section.visibleBtnCount || labeled.length;
+        const hiddenCount = Math.max(0, labeled.length - visibleCount);
+
+        labeled.forEach((entry, i) => {
+          const target =
+            moreContainer && i >= visibleCount ? moreContainer : btnsContainer;
+
+          // Datums no faila nosaukuma (GGGG-MM-DD_...) -tiek rādīts uz pogas
+          const dateMatch = entry.file.match(/^(\d{4})-(\d{2})-(\d{2})/);
+          const dateLabel = dateMatch ? `${dateMatch[3]}.${dateMatch[2]}.` : "";
+
+          const a = document.createElement("a");
+          a.href = `#${entry.id}`;
+          a.className = "btn btn-info rounded-pill px-3 m-2";
+          a.setAttribute("role", "button");
+          a.innerHTML = dateLabel
+            ? `${entry.label} <small class="opacity-75">· ${dateLabel}</small>`
+            : entry.label;
+          a.dataset.searchText = normalizeSearchText(
+            `${entry.label} ${dateLabel}`,
+          );
+          target.appendChild(a);
         });
+
+        // "Rādīt visus notikumus" poga -tikai, ja tiešām ir kas paslēpts
+        if (toggleBtn) {
+          if (hiddenCount > 0 && moreContainer) {
+            const defaultText = `Rādīt visus notikumus (+${hiddenCount})`;
+            toggleBtn.textContent = defaultText;
+            moreContainer.addEventListener("show.bs.collapse", () => {
+              toggleBtn.textContent = "Rādīt mazāk";
+            });
+            moreContainer.addEventListener("hide.bs.collapse", () => {
+              toggleBtn.textContent = defaultText;
+            });
+          } else {
+            toggleBtn.style.display = "none";
+          }
+        }
+
+        // Meklēšana pogu tekstā -paslēpj neatbilstošās, atver "vairāk" bloku, ja atbilstība tur
+        if (section.searchInputId) {
+          const searchInput = document.getElementById(section.searchInputId);
+          if (searchInput) {
+            searchInput.addEventListener("input", () => {
+              const query = normalizeSearchText(searchInput.value.trim());
+              const allBtns = [
+                ...btnsContainer.querySelectorAll("a"),
+                ...(moreContainer ? moreContainer.querySelectorAll("a") : []),
+              ];
+              let matchInMore = false;
+
+              allBtns.forEach((btn) => {
+                const isMatch = !query || btn.dataset.searchText.includes(query);
+                btn.style.display = isMatch ? "" : "none";
+                if (isMatch && moreContainer && moreContainer.contains(btn)) {
+                  matchInMore = true;
+                }
+              });
+
+              if (query && matchInMore && moreContainer && window.bootstrap) {
+                bootstrap.Collapse.getOrCreateInstance(moreContainer, {
+                  toggle: false,
+                }).show();
+              }
+            });
+          }
+        }
       }
     }
 
@@ -180,7 +264,119 @@ export async function loadTopicality() {
         console.error("Aktualitāšu ielādes kļūda:", error);
       }
     }
+
+    // Pēc raksta ielādes -meklēšanas ieteikumi ar pilniem nosaukumiem
+    // (iekļauj arī notikumus, kam nav pogas)
+    if (section.suggestionsId && section.searchInputId) {
+      setupSearchSuggestions(section, btnsContainer, moreContainer);
+    }
   }
 
   scrollToHash();
+}
+
+// ============================================================
+//  Meklēšanas ieteikumi -pilnu nosaukumu (raksta virsraksta) meklēšana,
+//  ieskaitot ierakstus bez pogas. Rāda "as-you-type" ieteikumus zem lauka.
+// ============================================================
+function setupSearchSuggestions(section, btnsContainer, moreContainer) {
+  const searchInput = document.getElementById(section.searchInputId);
+  const suggestionsBox = document.getElementById(section.suggestionsId);
+  if (!searchInput || !suggestionsBox) return;
+
+  // Indekss ar visiem ierakstiem (arī bez pogas) -virsraksts nolasīts no DOM
+  const index = section.list
+    .filter((entry) => typeof entry === "object" && entry.id)
+    .map((entry) => {
+      const el = document.getElementById(entry.id);
+      const heading = el
+        ? el.matches("h1, h2, h3, h4, h5, h6")
+          ? el
+          : el.querySelector("h1, h2, h3, h4, h5, h6")
+        : null;
+      const title = heading ? heading.textContent.trim() : entry.label || entry.id;
+
+      const dateMatch = entry.file.match(/^(\d{4})-(\d{2})-(\d{2})/);
+      const dateLabel = dateMatch ? `${dateMatch[3]}.${dateMatch[2]}.${dateMatch[1]}` : "";
+
+      return {
+        id: entry.id,
+        title,
+        dateLabel,
+        hasBtn: Boolean(entry.label),
+        normalized: normalizeSearchText(`${title} ${dateLabel}`),
+      };
+    });
+
+  function hideSuggestions() {
+    suggestionsBox.style.display = "none";
+    suggestionsBox.innerHTML = "";
+  }
+
+  function goToEntry(item) {
+    hideSuggestions();
+    searchInput.value = "";
+    searchInput.dispatchEvent(new Event("input"));
+
+    const target = document.getElementById(item.id);
+    if (!target) return;
+
+    // Ja atbilstošā poga ir paslēptajā blokā, vispirms to atver
+    if (item.hasBtn && moreContainer && window.bootstrap) {
+      const btnInMore = [...moreContainer.querySelectorAll("a")].find(
+        (a) => a.getAttribute("href") === `#${item.id}`,
+      );
+      if (btnInMore) {
+        bootstrap.Collapse.getOrCreateInstance(moreContainer, {
+          toggle: false,
+        }).show();
+      }
+    }
+
+    target.scrollIntoView({behavior: "smooth", block: "start"});
+  }
+
+  searchInput.addEventListener("input", () => {
+    const query = normalizeSearchText(searchInput.value.trim());
+    if (!query) {
+      hideSuggestions();
+      return;
+    }
+
+    const matches = index.filter((item) => item.normalized.includes(query)).slice(0, 8);
+    if (matches.length === 0) {
+      hideSuggestions();
+      return;
+    }
+
+    suggestionsBox.innerHTML = matches
+      .map(
+        (item, i) => `
+        <button type="button" class="list-group-item list-group-item-action" data-index="${i}">
+          ${item.title}
+          ${item.dateLabel ? `<small class="text-muted d-block">${item.dateLabel}</small>` : ""}
+        </button>`,
+      )
+      .join("");
+    suggestionsBox.style.display = "block";
+
+    suggestionsBox.querySelectorAll("button").forEach((btn, i) => {
+      btn.addEventListener("click", () => goToEntry(matches[i]));
+    });
+  });
+
+  searchInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      const first = suggestionsBox.querySelector("button");
+      if (first) first.click();
+    } else if (event.key === "Escape") {
+      hideSuggestions();
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!searchInput.contains(event.target) && !suggestionsBox.contains(event.target)) {
+      hideSuggestions();
+    }
+  });
 }

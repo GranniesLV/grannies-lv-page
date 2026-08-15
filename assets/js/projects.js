@@ -219,6 +219,19 @@ document.addEventListener("DOMContentLoaded", function () {
         changeCarouselText("galleryCarouselFlexibli", captionsForFlexibli);
         changeCarouselText("galleryCarouselInovation", captionsForInovation);
       });
+
+      // Ja URL norāda uz konkrētu projektu (piem. no globālās meklēšanas
+      // rezultāta #collapse<id>), atveram un aizritinam to
+      const hash = window.location.hash;
+      if (hash && hash.startsWith("#collapse")) {
+        const collapseEl = document.querySelector(hash);
+        if (collapseEl && window.bootstrap) {
+          bootstrap.Collapse.getOrCreateInstance(collapseEl, {toggle: true});
+          setTimeout(() => {
+            collapseEl.scrollIntoView({behavior: "smooth", block: "center"});
+          }, 300);
+        }
+      }
     })
     .catch((error) => console.error("Kļūda ielādējot projektus:", error));
 });

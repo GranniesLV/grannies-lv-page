@@ -428,3 +428,21 @@ h1 {
   z-index: 10;
   border-top: none;
 }
+
+/*~ GLOBĀLĀ MEKLĒŠANA -fokusa gredzens ap visu ikonas+lauka grupu, ne tikai lauku */
+.search-input-group {
+  border-radius: 0.5rem;
+}
+
+.search-input-group .form-control:focus {
+  box-shadow: none;
+}
+
+.search-input-group:focus-within {
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+.search-input-group:focus-within .input-group-text,
+.search-input-group:focus-within .form-control {
+  border-color: var(--bs-primary);
+}
