@@ -1,7 +1,7 @@
 import {initFormValidation} from "./formValidation.js";
 import {scrollToTop, toggleScrollButton, scrollToHash} from "./additionalFunc.js";
 import {loadTopicality} from "./topicality.js";
-import {initCalendar} from "./calendarData.js";
+import {initCalendar, updateCalendarNavLink} from "./calendarData.js";
 import {initGlobalSearch} from "./search.js";
 
 // ============================================================
@@ -317,6 +317,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   // Globālā meklēšana (pieejama katrā lapā, jo galvene ielādēta visur)
   initGlobalSearch();
+
+  // Galvenes "Kalendārs" saite - vienmēr uz aktīvā perioda PDF (katrā lapā)
+  updateCalendarNavLink();
 
   // Scroll to top poga
   const scrollBtn = document.getElementById("scroll-to-top");

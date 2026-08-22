@@ -11,6 +11,8 @@ Statiska HTML/CSS/JS lapa (bez build soļa, bez npm). Deployota ar GitHub Pages,
 - Komentāri kodā: tikai ja nepieciešami, īsi
 - Attēli bez `object-fit: cover` un `max-height` ierobežojumiem - izmantot `class="img-fluid rounded shadow-sm"`
 - Attēliem, ko var uzklikšķināt, aplīt ar `<a href="..." target="_blank" rel="noopener noreferrer">`
+- Git commit ziņojumi: vienmēr **angliski** (kods/saturs paliek latviski, tikai commit teksts angliski)
+- Claude **nekad pats neizpilda `git commit`** (arī ne push) - vienmēr tikai sagatavo commit ziņojuma tekstu un atstāj commitošanu lietotājam, ja vien lietotājs skaidri nelūdz to izdarīt pašu
 
 ---
 
@@ -142,7 +144,16 @@ Katrai `pages/*.html` un `articles/projects/*.html` lapai jābūt:
 - Open Graph tagiem (`og:type`, `og:locale`, `og:url`, `og:title`, `og:description`, `og:image`) - `og:image` pēc noklusējuma `https://vecmaminas.lv/assets/images/logos/granniesLogo.png`, ja nav labākas specifiskas bildes
 - **tikai vienam** Bootstrap CSS failam (`../assets/css/bootstrap.css` - tas jau satur pilnu Bootstrap+Bootswatch "Minty" tēmu; CDN `bootstrap.min.css` NAV jāliek klāt, citādi ielādējas divreiz)
 
-Veidne `pages/templateForNewPages.html` satur šo struktūru ar placeholder komentāru - jauna lapa jākopē no tās un jāaizpilda.
+Veidne `pages/templateForNewPages.html` satur šo struktūru ar placeholder komentāru - jauna lapa jākopē no tās un jāaizpilda. Tā jau satur arī GoatCounter apmeklējumu statistikas skriptu (skat. zemāk) - kopējot no veidnes, tas automātiski būs klāt.
+
+### Apmeklējumu statistika (GoatCounter)
+Katrai **pilnai HTML lapai** (`index.html`, `pages/*.html`, `articles/projects/*.html`) tieši pirms `</body>` ir GoatCounter skripts:
+```html
+<script data-goatcounter="https://vecmaminas.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+```
+Panelis: `https://vecmaminas.goatcounter.com`. **Nedrīkst** likt šo skriptu `components/header.html` vai citos fragmentos, kas tiek ielādēti ar `fetch()`+`innerHTML` (`loadComponent()` `main.js`) - pārlūks neizpilda `<script>` tagus, kas ievietoti caur `innerHTML`, tāpēc tas nekad nenostrādātu. Tāpat nav jāliek `articles/topicality/*.html` vai `modal_popup/*.html` fragmentos - tie nav atsevišķi apmeklējamas lapas.
+
+**Statistikas lapa** (`pages/statistika.html`) - tikai viena poga uz GoatCounter paneli, bez virsraksta/apraksta. Apzināti **NAV** navigācijā (`header.html`/`footer.html`) un **NAV** reģistrēta `search.js` → `STATIC_PAGES` (lai neparādītos arī globālajā meklēšanā) - atrodama tikai zinot tiešo URL. Ir `<meta name="robots" content="noindex, nofollow">`, lai to neindeksē meklētājprogrammas. Šī nav īsta piekļuves kontrole (jebkurš, kas uzmin URL, to atradīs) - tikai apslēpta no nejaušas navigācijas/meklēšanas. Pati poga gan neko neatklāj svešiniekam - tā ved tikai uz GoatCounter pieteikšanās logu, dati bez konta datiem nav redzami.
 
 ---
 
@@ -162,9 +173,14 @@ Uz šī macOS pieejams tikai **`sips`** (iebūvēts rīks) - nav `imagemagick`/`
 
 ## Kalendāra sistēma
 
-- Fails: `assets/js/calendarData.js`
-- Rāda mēneša attēlu un saiti uz PDF lapu sākumlapā/`recommend.html` (`initCalendar()`, izsaukts no `main.js` tikai sākumlapā)
-- Katru gadu jāatjaunina masīvi `oldCalendarData`/`newCalendarData` (mēnesis → attēls mapē `assets/images/calendar/` + PDF lappuse) un jāpievieno jauns PDF `assets/documents/`
+Pilns apraksts (t.sk. kā strādā automātiskā gadu pārslēgšanās, kā pievienot jaunu kalendāra gadu
+un kā notestēt nākotnes pārslēgšanos ar `?debugDate=`) - **[`KALENDARS.md`](./KALENDARS.md)**.
+
+Īsumā: `assets/js/calendarData.js` satur masīvu `calendarPeriods` (katrs objekts - viens kalendāra
+gads ar `from`/`to` diapazonu, PDF failu un 12 mēnešu datiem). Sistēma pati izvēlas pareizo periodu
+pēc šodienas datuma - gadu skaitļi kodā NAV hardkodēti nekur citur. Rāda mēneša attēlu un saiti uz
+PDF lapu sākumlapas popup ziņā/`recommend.html` (`initCalendar()`) un atjauno galvenes "Kalendārs"
+saiti katrā lapā (`updateCalendarNavLink()`, izsaukts no `main.js`).
 
 ---
 
@@ -210,7 +226,9 @@ Pārējie (Kultūrizglītība Brasas apkaimes senioriem - id 14, KA1 projekts Pa
 
 ## Citi projekta faili
 - `RAKSTU_PIEVIENOŠANA.md` - īsa norāde, kas atsūta uz šo failu (lai process būtu aprakstīts tikai vienā vietā)
-- `README.md` - tukšs/neizmantots
+- `KALENDARS.md` - pilns kalendāra sistēmas apraksts (skat. "Kalendāra sistēma" augstāk)
+- `FAILU_STRUKTURA.md` - projekta failu struktūras pārskats (kas kur atrodas, ar īsiem komentāriem)
+- `README.md` - tukšs/neizmantots, arī `.gitignore`-ots (skat. `FAILU_STRUKTURA.md` failu struktūrai)
 
 ---
 
@@ -227,15 +245,16 @@ Apkopots no koda/UX pārskata (2026-08). ✅ = izdarīts, atzīmēt un pārcelt 
 - Globālā meklēšana pa visu vietni (skat. "Globālā meklēšana")
 - ⚠️ **Kritisks labojums**: `components/header.html` navigācijai trūka `.navbar-toggler` pogas - zem `lg` ekrāna platuma (<992px, t.i. **visi telefoni**) visa navigācija (arī Galerija, Privātuma politika) bija pilnībā nepieejama, jo nebija veida, kā atvērt `.navbar-collapse`. Tagad pievienota poga + `.collapse` klase.
 - `pages/memories.html` attēli bija hotlinkoti no `picflow.media` (pagaidu/priekšskatījuma rīks) - lejupielādēti un pārvietoti uz `assets/images/memories/`, pievienota arī 15. dzimšanas dienas sadaļa
+- Kalendāra sistēma pārtaisīta uz `calendarPeriods` masīvu ar `from`/`to` diapazoniem (nekur vairs nav hardkodēts konkrēts gads) - pievienots 2026/2027 kalendāra gads, izlabota `calendarApril2025.png` salauztā atsauce `recommend.html`, galvenes "Kalendārs" saite tagad atjaunojas automātiski katrā lapā (`updateCalendarNavLink()`), pievienota `?debugDate=` testēšanas iespēja. Pilns apraksts - `KALENDARS.md`
+- Izveidots `FAILU_STRUKTURA.md` ar projekta failu struktūras pārskatu (`README.md` ir `.gitignore`-ots, tāpēc struktūras pārskatam izmantots cits fails)
 
 ### 🔲 Vēl nav izdarīts
 
 **Ātri labojami:**
 - `robots.txt` un `sitemap.xml` trūkst - apgrūtina meklētājprogrammu indeksāciju
-- 4 jau iepriekš eksistējošas salauztas attēlu atsauces:
+- 3 jau iepriekš eksistējošas salauztas attēlu atsauces:
   - `assets/images/icons.ico/apple-icon-180x180.png` (`pages/form1.html`) - mape/fails neeksistē
   - `assets/images/logos/Riga-ENG-Logo-black.png` un `.../topicality/events/Riga-ENG-Logo-black.png` - reālais fails ir `Riga-ENG-Logo-black.png.webp` (dubultais paplašinājums)
-  - `assets/images/titles/calendarApril2025.png` - fails vispār neeksistē
 - Citur vietnē (`index.html`, `pages/topicality.html`, `pages/about-us.html`, `pages/involved.html` u.c.) joprojām ir hotlinkoti baneru attēli no pexels.com/picflow.media - tas pats risks, kas piepildījās `memories.html` - vērts pārskatīt un lokalizēt arī tos
 
 **UX puse:**
