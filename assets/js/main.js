@@ -333,9 +333,6 @@ document.addEventListener("DOMContentLoaded", async function () {
   initFormValidation();
   setupFormSubmit();
 
-  // Hash scroll
-  scrollToHash();
-
   // Ziņu ielāde (tikai sākumlapā)
   const isHomePage =
     window.location.pathname === "/" ||
@@ -358,6 +355,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   // Lasīt vairāk (pēc dinamiskā satura ielādes)
   setupReadMore();
+
+  // Hash scroll - jāsauc PĒC loadTopicality(), jo raksts (ar id, uz ko ved saite)
+  // DOM-ā parādās tikai pēc asinhronās ielādes; agrāk elements vēl neeksistēja
+  scrollToHash();
 });
 
 window.addEventListener("scroll", toggleScrollButton);
