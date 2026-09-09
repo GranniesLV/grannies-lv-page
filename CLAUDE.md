@@ -252,10 +252,10 @@ Apkopots no koda/UX pārskata (2026-08). ✅ = izdarīts, atzīmēt un pārcelt 
 
 **Ātri labojami:**
 - `robots.txt` un `sitemap.xml` trūkst - apgrūtina meklētājprogrammu indeksāciju
-- 3 jau iepriekš eksistējošas salauztas attēlu atsauces:
-  - `assets/images/icons.ico/apple-icon-180x180.png` (`pages/form1.html`) - mape/fails neeksistē
+- 2 jau iepriekš eksistējošas salauztas attēlu atsauces:
   - `assets/images/logos/Riga-ENG-Logo-black.png` un `.../topicality/events/Riga-ENG-Logo-black.png` - reālais fails ir `Riga-ENG-Logo-black.png.webp` (dubultais paplašinājums)
 - Citur vietnē (`index.html`, `pages/topicality.html`, `pages/about-us.html`, `pages/involved.html` u.c.) joprojām ir hotlinkoti baneru attēli no pexels.com/picflow.media - tas pats risks, kas piepildījās `memories.html` - vērts pārskatīt un lokalizēt arī tos
+- `pages/form1.html` bija izkomentēts (nesaitēts) `involved.html`, bet palika publiski pieejams un Google to indeksēja tieši (2026-09) - fails izdzēsts no repo; ja atklājas vēl citas šādas "aizmirstas" lapas, tās vai nu pilnībā jāizdzēš, vai jāatzīmē ar `<meta name="robots" content="noindex, nofollow">` (skat. `pages/statistika.html` paraugu)
 
 **UX puse:**
 - Sākumlapas modālais popup atveras katru reizi, kad atver `index.html` - apsvērt rādīt tikai reizi sesijā/dienā (līdzīgi kā kontaktu popup ar `sessionStorage`)
@@ -268,3 +268,9 @@ Apkopots no koda/UX pārskata (2026-08). ✅ = izdarīts, atzīmēt un pārcelt 
 - Karuseļa slaidu paraksti (`captionsForTETE` u.c.) hardkodēti `projects.js`, nevis `projects.json` - viegli aizmirstams, pievienojot jaunu projektu ar galeriju
 - HTML/CSS klases (piem. `btn btn-info`) iekļautas tieši `projects.json` teksta laukos - sasaista datus ar konkrētu Bootstrap versiju
 - Nav automatizētas pārbaudes, vai `topicality.js`/`main.js`/`projects.json` minētie faili tiešām eksistē mapēs (palīdzētu pret "aizmirsu pievienot failu" kļūdām)
+
+**Arhitektūras jautājums (2026-09, no lietotāja) - vai pašreizējā struktūra vēl der?**
+Pašlaik satura pievienošana (raksts/notikums/projekts) prasa zināt un pieskarties **vairākiem** failiem reizē (jauns HTML fails + reģistrācija `topicality.js`/`projects.json` + bieži arī `modal_popup/` + `main.js`), un tas nav acīmredzams no paša projekta struktūras - jāzina konvencija no galvas vai jāskatās `CLAUDE.md`. Tas jau šobrīd rada risku (piem. aizmirsta reģistrācija, salauztas atsauces, "aizmirstas" nesaitētas lapas kā `form1.html`, skat. augstāk). Jautājums, kas vēl nav izlemts: vai pietiek to risināt **failu struktūras/dokumentācijas** līmenī (vienkāršāk, bez jaunas infrastruktūras), vai vajag **krasākas izmaiņas** (datubāze + serveris/CMS bekends)?
+  - **Par labu "paliekam pie statiskās lapas"**: vietne joprojām ir salīdzinoši maza (raksti/projekti - desmitos, ne tūkstošos), GitHub Pages ir bezmaksas un uzticams, nav servera uzturēšanas/drošības sloga, satura process ir *automatizējams ar skriptu* (piem. palīgskripts, kas izveido jaunā raksta HTML sagatavi + pats pievieno ierakstu attiecīgajā JS masīvā/JSON, tā ka cilvēkam nekad nav manuāli jārediģē `topicality.js`) - risinātu galveno sāpi (aizmiršanu) bez pilnas arhitektūras maiņas
+  - **Par labu datubāzei/CMS/serverim**: ērtāka satura pārvaldība cilvēkam bez tehniskām zināšanām (formas vietā, nevis HTML+JS rediģēšana ar roku/Claude palīdzību), vieglāk pievienot lietotāju kontus/tiesības, iespējams arī risinātu formu (`form2.html`) datu apstrādi pašiem (šobrīd `formspree.io` - trešā puse) - taču nozīmētu servera izmaksas/uzturēšanu, migrācijas darbu un GitHub Pages nomaiņu pret citu hostingu
+  - **Ieteikums, kas vēl jāapspriež ar lietotāju**: pirms lemt par datubāzi/serveri, izmēģināt lētāko soli - satura pievienošanas palīgskriptu/CLI, kas apvieno visus "Jauna raksta pievienošana" / "Jauna projekta pievienošana" soļus vienā komandā, un/vai vienkāršotu `FAILU_STRUKTURA.md` ar konkrētu "kur ko labot" lēmumu koku. Ja arī pēc tam struktūra joprojām jūtas nepārskatāma vai pieaug apjoms/lietotāju skaits, tad vērtēt CMS/datubāzi.
